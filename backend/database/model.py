@@ -3,6 +3,9 @@ import random
 import pymongo
 import string
 from datetime import datetime
+from langchain_openai import ChatOpenAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
 import numpy as np
 
 mongo_client = pymongo.MongoClient(os.environ["MONGODB_CONNECTION_STRING"])
@@ -10,6 +13,17 @@ mongo_db = mongo_client["brij"]
 companies = mongo_db["companies"]
 question_bank = mongo_db["question_bank"]
 users = mongo_db["users"]
+
+def gpt4(question, temperature=0.0):
+    llm = ChatOpenAI(temperature=temperature, model_name="gpt-4-0613")
+    
+    prompt = PromptTemplate(template="{question}", input_variables=["question"])
+
+    llm_chain = LLMChain(prompt=prompt, llm=llm)
+    
+    response = llm_chain.invoke({"question": question})
+    
+    return response["text"]
 
 def generate_secure_cookie():
     """Generates a secure random cookie."""
@@ -194,3 +208,59 @@ def getIndividualReport(email, report_id):
     report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
     return report
 print(assign_cookie("tim.cook@apple.com"))
+
+def writeIndividualReportDescription(email, report_id):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+        
+    reports = found_user.get("reports", [])
+    report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
+    if not report:
+        return None
+    
+    report["description"] = gpt4("""{{
+    "system_message": "Each trait is measured on a scale from 0 to 1, where 0 and 1 do not directly suggest the absence or presence of any trait.",
+    "trait_descriptions": {{
+        "time_management": "This trait, when assigned a value closer to 0, suggests a preference for a relaxed, casual and spontaneous attitude, whereas a value closer to 1 would suggest a preference for strict order and planning.",
+        "communication": "This trait, when assigned a value closer to 0, suggests a passive communication style whereas a value closer to 1 would suggest a more active communication style.",
+        "adaptability": "This trait, when assigned a value closer to 0, suggests an attitude where an established plan should be followed to the letter as much as possible whereas a value closer to 1 would suggest a more spontaneous and readily changing attitude.",
+        "teamwork": "This trait, when assigned a value closer to 0, suggests individuality, self-sufficiency and the independent completion of tasks whereas a value closer to 1 would suggest an inter-dependent culture where work is delegated and shared.",
+        "leadership_structure": "This trait, when assigned a value closer to 0, suggests a top-down, hierarchical leadership structure whereas a value closer to 1 would suggest a flat structure."
+    }}
+}}
+
+{{
+    "traits": {{
+        "time_management": 0.8,
+        "communication": 0.9,
+        "adaptability": 0.3,
+        "teamwork": 0.6,
+        "leadership_structure": 1
+    }},
+    "instructions": "Given the above traits and measurements, please provide a description of the traits possessed by this person with an action plan for each trait.",
+    "description": "Based on the provided traits and measurements, this person demonstrates a strong preference for order and planning, suggesting they are well-organised and prefer structured environments. Their communication style is active, indicating they are likely to be assertive, clear, and proactive in expressing ideas and expectations. However, they exhibit a tendency to adhere to established plans and a potential discomfort with sudden changes or ambiguity. They display a moderate preference for teamwork, balancing between working independently and collaboratively. Lastly, they strongly prefer a flat leadership structure, which implies a preference for egalitarianism and decentralised decision-making. \n\nContinue leveraging your strong preference for order and planning by implementing detailed schedules and clear goals to maintain productivity and reduce stress. Utilise your active communication style to foster an environment where ideas and expectations are clearly communicated. Promote regular feedback sessions to enhance transparency and ensure everyone is on the same page. Introduce gradual changes and provide ample notice when shifts are needed. Build resilience in handling unexpected situations or alterations to established plans. Continue to balance independent and collaborative work by assigning tasks that allow for both personal accountability and team interaction. Support a flat leadership approach by encouraging open dialogue and inclusive decision-making processes. Empower all team members to contribute ideas and participate in leadership roles, fostering a sense of ownership and mutual respect."
+}}
+
+{{
+    "traits": {{
+        "time_management": 0.0,
+        "communication": 0.0,
+        "adaptability": 0.0,
+        "teamwork": 0.0,
+        "leadership_structure": 0.0
+    }},
+    "instructions": "Given the above traits and measurements, please provide a description of the traits possessed by this person with an action plan for each trait.",
+    "description": "Based on the provided traits and measurements, this person demonstrates a preference for a relaxed, casual, and spontaneous attitude towards time management, suggesting they may not be overly concerned with strict order and planning. Their communication style is passive, indicating they may be more reserved and less assertive in expressing ideas and expectations. They exhibit a strong tendency to adhere to established plans and may be uncomfortable with sudden changes or ambiguity. They display a strong preference for individuality, self-sufficiency, and the independent completion of tasks, suggesting they may prefer working alone rather than in a team. Lastly, they strongly prefer a top-down, hierarchical leadership structure, which implies a preference for clear lines of authority and decision-making. \n\nConsider implementing some level of structure and planning to your daily routine to improve productivity and reduce potential stress. Work on improving your communication skills by being more proactive in expressing your ideas and expectations. Try to be more open to changes and adapt to new situations as this can be a valuable skill in today's fast-paced world. While it's good to be self-sufficient, remember that teamwork can also be beneficial in achieving larger goals. Try to involve yourself more in team activities and learn to delegate tasks when necessary. Lastly, while a hierarchical structure has its benefits, it's also important to encourage open communication and feedback from all levels of the team. This can lead to more informed decision-making and a more engaged and motivated team.",
+}}
+
+{{
+    "traits": {0},
+    "instructions": "Given the above traits and measurements, please provide a description of the traits possessed by this person with an action plan for each trait.",
+    "description": "
+    """.format(report["traits"])).rstrip('"')
+
+    users.update_one({"email": email}, {"$set": {"reports": reports}})
+    return True
+
+writeIndividualReportDescription("john.appleseed@apple.com", 0)
