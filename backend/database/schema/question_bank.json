@@ -1,5 +1,6 @@
 [
     {
+        "question_id": 0,
         "question": "You’ve unexpectedly been appointed as the Financial Advisor for the Meeps, a quirky and reclusive community known for their eccentric financial habits and unique currency. The Meeps are known for their odd financial practices, such as trading in rare gemstones that are only found in their world and valuing objects based on their “sentimental worth” rather than market value. Your task is to help the Meeps navigate their finances, improve their economic stability, and modernise their approach to managing wealth.",
         "category": "section",
         "mappings": [
@@ -7,6 +8,7 @@
         ]
     },
     {
+        "question_id": 1,
         "question": "How would you set a vision for the Meeps?",
         "category": "leadership",
         "mappings": [
@@ -17,6 +19,7 @@
         ]
     },
     {
+        "question_id": 2,
         "question": "Who would you entrust with key responsibilities?",
         "category": "leadership",
         "mappings": [
@@ -27,6 +30,7 @@
         ]
     },
     {
+        "question_id": 3,
         "question": "How would you approach hiring new team members to ensure they align with the Meeps' culture and goals?",
         "category": "time_management",
         "mappings": [
@@ -37,6 +41,7 @@
         ]
     },
     {
+        "question_id": 4,
         "question": "How would you respond to the growing resentment and criticism from the Meeps?",
         "category": "communication",
         "mappings": [
@@ -47,6 +52,7 @@
         ]
     },
     {
+        "question_id": 5,
         "question": "How would you continue to inspire those you leave behind, and what would your final actions be?",
         "category": "leadership",
         "mappings": [
@@ -57,6 +63,7 @@
         ]
     },
     {
+        "question_id": 6,
         "question": "Imagine you’re a member of a small research team sent to a remote desert island for a week-long study of the local wildlife. However, due to a freak storm, your boat is damaged, and you're stranded on the island with just a few basic supplies: a flare gun, a box of matches, a small first-aid kit, a multi-tool, a flashlight with extra batteries, and a few days' worth of food and water. You have no way to communicate with the outside world, and the storm has disrupted any potential rescue operations. The island is lush with dense vegetation, and you can hear the sound of a river in the distance.",
         "category": "section",
         "mappings": [
@@ -64,6 +71,7 @@
         ]
     },
     {
+        "question_id": 7,
         "question": "It’s getting dangerously cold, and you need to light a fire to stay warm. The only item you have to start the fire is a letter from your dog, which holds immense sentimental value. Your shipmates insist you burn it for the sake of the group.",
         "category": "conflict_management",
         "mappings": [
@@ -74,6 +82,7 @@
         ]
     },
     {
+        "question_id": 8,
         "question": "After deciding too long to burn the letter, you notice that everyone seems upset and distant. They’re not openly confronting you, but their frustration is evident in their body language and tone. ",
         "category": "emotional_intelligence",
         "mappings": [
@@ -84,6 +93,7 @@
         ]
     },
     {
+        "question_id": 9,
         "question": "One of your shipmates seems particularly distressed by the situation, withdrawing from the group and showing signs of anxiety. You notice they’ve been quieter and less involved in group activities.How do you approach them?",
         "category": "emotional_intelligence",
         "mappings": [
@@ -94,6 +104,7 @@
         ]
     },
     {
+        "question_id": 10,
         "question": "You discover a large coconut, rich in nutrients and with the potential to sustain the group for days. The coconut could also be used for water storage or as a tool. However, there’s disagreement on how it should be used—some want to consume it immediately, while others see long-term benefits.",
         "category": "conflict_management",
         "mappings": [
@@ -104,6 +115,7 @@
         ]
     },
     {
+        "question_id": 11,
         "question": "After several days on the island, the group is feeling discouraged. Food and water are running low, and the possibility of rescue seems uncertain.How do you address the growing despair and help the team stay positive?",
         "category": "adaptability",
         "mappings": [
@@ -114,6 +126,7 @@
         ]
     },
     {
+        "question_id": 12,
         "question": "You’ve just been hired for a highly unusual job as a “Professional Cloud Shaper” in a fantastical world where clouds are considered works of art. Your role involves traveling across the sky, using a special set of tools and techniques to mold and sculpt clouds into various shapes and patterns for different events and celebrations. Each day, you receive requests to create specific cloud formations in the sky.",
         "category": "section",
         "mappings": [
@@ -121,6 +134,7 @@
         ]
     },
     {
+        "question_id": 13,
         "question": "What strategies would you use to excel in your role as a Professional Cloud Shaper? How often would you set goals?",
         "category": "time_management",
         "mappings": [
@@ -131,6 +145,7 @@
         ]
     },
     {
+        "question_id": 14,
         "question": "As your cloud designs become more popular, orders pile up, making it impossible to fulfill them within the promised 24-hour timeframe. How would you handle this situation?",
         "category": "communication",
         "mappings": [
@@ -141,6 +156,7 @@
         ]
     },
     {
+        "question_id": 15,
         "question": "With an increasing workload, you find yourself working longer hours. How do you manage your time to maintain a balance between work and rest?",
         "category": "time_management",
         "mappings": [
@@ -151,6 +167,7 @@
         ]
     },
     {
+        "question_id": 16,
         "question": "How do you gain the trust of your new employee in this demanding and creative environment?",
         "category": "emotional_intelligence",
         "mappings": [
@@ -161,6 +178,7 @@
         ]
     },
     {
+        "question_id": 17,
         "question": "How do you handle the stress and keep the business running after your essential tool breaks?",
         "category": "emotional_intelligence",
         "mappings": [
@@ -171,6 +189,7 @@
         ]
     },
     {
+        "question_id": 18,
         "question": "You find yourself unexpectedly transported to a peculiar social setting—a bustling intergalactic bazaar floating in space, where beings from countless planets and dimensions gather to trade, socialize, and celebrate. The bazaar is filled with vibrant colors, exotic smells, and an array of alien cultures and customs. You’re the only human in sight, and everyone around you speaks a mix of unfamiliar languages and uses unusual gestures. With no clear understanding of the bazaar's social norms, you need to navigate this enigmatic environment while trying to make connections and understand the bazaar's unique social dynamics. Your goal is to blend in, learn the local customs, and perhaps even find a way back to your own world.",
         "category": "section",
         "mappings": [
@@ -178,6 +197,7 @@
         ]
     },
     {
+        "question_id": 19,
         "question": "The customs and social norms are unfamiliar to you, but you don't feel threatened. How do you approach blending in and adapting to this new environment?",
         "category": "conflict_management",
         "mappings": [
@@ -188,6 +208,7 @@
         ]
     },
     {
+        "question_id": 20,
         "question": "You’re trying to communicate with a local who doesn’t speak your language. How do you attempt to get your message across?",
         "category": "adaptability",
         "mappings": [
@@ -198,6 +219,7 @@
         ]
     },
     {
+        "question_id": 21,
         "question": "You realise that flailing your arms is not effective in gaining attention or communicating with the locals. How do you adjust your strategy?",
         "category": "communication",
         "mappings": [
@@ -208,6 +230,7 @@
         ]
     },
     {
+        "question_id": 22,
         "question": "Flailing your arms, you accidentally knock over a vendor’s stall, causing some valuable items to fall and break. The vendor, a large alien creature with multiple arms and an intimidating presence, seems upset and starts speaking in a language you don’t understand.",
         "category": "leadership",
         "mappings": [
@@ -218,6 +241,7 @@
         ]
     },
     {
+        "question_id": 23,
         "question": "2. Patience and Conflict Resolution: While navigating the bazaar, someone becomes aggressive and threatens you. They appear weaker than you, but you need to decide how to handle the situation. What is your approach?",
         "category": "communication",
         "mappings": [
@@ -228,6 +252,7 @@
         ]
     },
     {
+        "question_id": 24,
         "question": "You've just been appointed as the Lead Strategist for the launch of a highly unconventional financial product: 'The Budget-Bending Wallet.' This wallet promises to not only keep track of your expenses but also dynamically adjust your budget in real-time based on your spending habits and financial goals. Equipped with AI, it uses a mix of predictive algorithms and personalised insights to suggest spending limits, savings strategies, and even offers tailored investment opportunities. The wallet also features a built-in holographic display that shows a 3D projection of your financial health, offering real-time updates and visualisations. Your task is to design a captivating marketing campaign, organise a launch event, and address any concerns about privacy and security regarding the wallet’s data collection and AI capabilities.",
         "category": "section",
         "mappings": [
@@ -235,6 +260,7 @@
         ]
     },
     {
+        "question_id": 25,
         "question": "As the launch date for “The Budget-Bending Wallet” approaches, you look at your calendar. What do you see?",
         "category": "time_management",
         "mappings": [
@@ -245,6 +271,7 @@
         ]
     },
     {
+        "question_id": 26,
         "question": "You’ve been putting off finalising key details for the launch of “The Budget-Bending Wallet.” How do you handle the situation?",
         "category": "time_management",
         "mappings": [
@@ -255,6 +282,7 @@
         ]
     },
     {
+        "question_id": 27,
         "question": "You find out that a major investor has pulled out just before the launch. How do you respond?s",
         "category": "communication",
         "mappings": [
@@ -265,6 +293,7 @@
         ]
     },
     {
+        "question_id": 28,
         "question": "While reviewing the budget, you find that a significant amount of money is missing and discover that your best worker, who has used the funds for their child's hospital expenses, is responsible.",
         "category": "leadership",
         "mappings": [
