@@ -8,30 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="question" id="question1">
-            <p>What is your name?</p>
-            <input type="text" id="answer1">
-            <button onclick="showNextQuestion('question2')">Next</button>
-        </div>
+    <section class="section">
+        <div class="questionnaire-container">
+            <div class="question visible" id="question1">
+                <p class="question-text">What is your favorite programming language?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption('Python', 'question2')">Python</div>
+                    <div class="option" onclick="selectOption('JavaScript', 'question2')">JavaScript</div>
+                    <div class="option" onclick="selectOption('Java', 'question2')">Java</div>
+                    <div class="option" onclick="selectOption('C++', 'question2')">C++</div>
+                </div>
+            </div>
 
-        <div class="question hidden" id="question2">
-            <p>What is your favorite color?</p>
-            <input type="text" id="answer2">
-            <button onclick="showNextQuestion('question3')">Next</button>
-        </div>
+            <div class="question hidden" id="question2">
+                <p class="question-text">What is your preferred development environment?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption('VSCode', 'question3')">VSCode</div>
+                    <div class="option" onclick="selectOption('Sublime Text', 'question3')">Sublime Text</div>
+                    <div class="option" onclick="selectOption('IntelliJ IDEA', 'question3')">IntelliJ IDEA</div>
+                    <div class="option" onclick="selectOption('Eclipse', 'question3')">Eclipse</div>
+                </div>
+            </div>
 
-        <div class="question hidden" id="question3">
-            <p>What is your favorite hobby?</p>
-            <input type="text" id="answer3">
-            <button onclick="showNextQuestion('submit')">Submit</button>
-        </div>
+            <div class="question hidden" id="question3">
+                <p class="question-text">Which type of projects do you prefer?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption('Web Development', 'submit')">Web Development</div>
+                    <div class="option" onclick="selectOption('Data Science', 'submit')">Data Science</div>
+                    <div class="option" onclick="selectOption('Mobile Apps', 'submit')">Mobile Apps</div>
+                    <div class="option" onclick="selectOption('Game Development', 'submit')">Game Development</div>
+                </div>
+            </div>
 
-        <div class="hidden" id="submit">
-            <p>Thank you for completing the questionnaire!</p>
+            <div class="question hidden" id="submit">
+                <p class="question-text">Thank you for completing the questionnaire!</p>
+            </div>
         </div>
-    </div>
-
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
                     "communication": 0.9,
                     "adaptability": 0.3,
                     "teamwork": 0.6,
-                    "leadership_structure": 0.0
+                    "leadership_structure": 1
                 },
                 "description": "You are great at active communication and time management, believing in a top-down leadership structure. However, you struggle with adaptability and teamwork.",
                 "personality_type": "rock" 

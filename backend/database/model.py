@@ -1,7 +1,9 @@
 import os
 import random
 import pymongo
+import string
 from datetime import datetime
+import numpy as np
 
 mongo_client = pymongo.MongoClient(os.environ["MONGODB_CONNECTION_STRING"])
 mongo_db = mongo_client["brij"]
@@ -9,16 +11,17 @@ companies = mongo_db["companies"]
 question_bank = mongo_db["question_bank"]
 users = mongo_db["users"]
 
+def generate_secure_cookie():
+    """Generates a secure random cookie."""
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=64))
+
 def assign_cookie(email):
     found_user = users.find_one({"email": email})
     if not found_user:
         return None
     
-    new_cookie = ''.join(chr(random.randrange(97, 122)) for i in range(64))
-    found_user["cookie"] = new_cookie
-
-    users.delete_one({"email": email})
-    users.insert_one(found_user)
+    new_cookie = generate_secure_cookie()
+    users.update_one({"email": email}, {"$set": {"cookie": new_cookie}})
 
     return new_cookie
 
@@ -74,19 +77,38 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
 def generateCompanyAverages(company_name):
     usrs = users.find({"company": company_name})
     count = 0
-    company_total = {}
+    issues = {}
+    all_traits = {}
+    
     for user in usrs:
         reps = user["reports"]
         if reps != []:
             latest_report = max(reps, key=lambda reps: reps["report_id"])
             traits = latest_report["traits"]
             for trait in traits:
-                company_total[trait] = company_total.setdefault(trait, 0) + traits[trait]
-            count += 1
-    company_averages = {key: value / count for key, value in company_total.items()}
-    return company_averages
-
-def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url, pronouns):
+                if trait not in all_traits:
+                    all_traits[trait] = []
+                all_traits[trait].append(traits[trait])
+    
+    company_averages = {}
+    
+    for trait, scores in all_traits.items():
+        
+        if scores:
+            mean = np.mean(scores)        
+            lower_bound = mean - 0.4
+            upper_bound = mean + 0.4
+            outliers = [score for score in scores if score < lower_bound or score > upper_bound]
+        
+            company_averages[trait] = mean
+            if len(outliers)/len(scores) > 0.4:
+                issues[trait] = 'Yes'
+            else:
+                issues[trait] = 'No'
+    
+    return company_averages, issues
+print(generateCompanyAverages("Apple, Inc."))
+def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url):
     found_employee_email = users.find_one({"email": employee_email})
     found_employee_company = companies.find_one({"company_name": employee_company})
     
@@ -112,5 +134,4 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
     )   
     return True
 
-print(createNewEmployee("Yanney OU","yaedb@gmail.com","meowmeow","ABC Inc.", "yabsdjhb", "she/her"))
 print(assign_cookie("tim.cook@apple.com"))
