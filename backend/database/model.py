@@ -193,4 +193,22 @@ def getIndividualReport(email, report_id):
     reports = found_user.get("reports", [])
     report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
     return report
-print(assign_cookie("tim.cook@apple.com"))
+
+def retrieveCompanyReport(email, report_id):
+    user = users.find_one({"email": email})
+    if not user:
+        return False
+    company_name = user.get("company")
+    
+    if not company_name:
+        return False
+    company = companies.find_one({"company_name": company_name})
+    if not company or not any(user['email'] == email for user in company.get("power_users", [])):
+        return False
+    reports = company.get("internal_reports", [])
+    for report in reports:
+        if int(report["report_id"]) == int(report_id):
+            return report
+    return False
+
+

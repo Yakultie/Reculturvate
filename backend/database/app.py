@@ -33,9 +33,13 @@ def employee_onboard_get():
 
 @app.route('/employee_onboard', methods=['POST'])
 def employee_onboard_post():
+
     email = request.form['email']
     # validate email exists in unactivated users list
+    # not sure what the unactivated usersl ist mean, only has email idk???
     # do logic
+    cookie = request.cookies.get("cookie")
+    cookie_email = model.login_with_cookie(cookie)
     return render_template('employee-onboarding.html', email=email)
 
 @app.route('/employee_signup', methods=['POST'])
@@ -112,8 +116,12 @@ def generate_company_report_post():
 def retrieve_company_report_get(report_id):
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    
-    return render_template('company_report.html')
+    report = model.retrieveCompanyReport(email, report_id)
+    if report != False:
+        print(report)
+        return render_template('company_report.html')
+    else:
+        return render_template('error.html')
 
 @app.route('/generate_collaborative_report', methods=["POST"])
 def generate_collaborative_report_post():
@@ -129,8 +137,7 @@ def collaborative_report_get(collaborative_report_id):
     if report != False:
         return render_template('collaborative_report.html')
     else:
-        # should technically display an error
-        return render_template('dashboard.html')
+        return render_template('error.html')
 
 # can change int oa post request from dashboard    
 @app.route('/retrieve_report_ids', methods=['GET'])
