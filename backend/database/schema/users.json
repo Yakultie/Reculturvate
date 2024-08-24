@@ -5,6 +5,8 @@
         "email": "john.appleseed@apple.com",
         "password": "feboqwueibhijneoifwjunbhjnronq",
         "linkedin_url": "https://www.linkedin.com/in/john-appleseed",
+        "pronouns": "he/him",
+        "cookie": null,
         "reports": [
             {
                 "report_id": 0,
@@ -26,20 +28,9 @@
         "email": "sam.sung@apple.com",
         "password": null,
         "linkedin_url": null,
-        "reports": [
-            {
-                "report_id": 0,
-                "traits": {
-                    "time_management": 0.3,
-                    "communication": 0.2,
-                    "adaptability": 0.1,
-                    "teamwork": 0.6,
-                    "leadership_structure": 0
-                },
-                "description": "You are great at active communication and time management, believing in a top-down leadership structure. However, you struggle with adaptability and teamwork.",
-                "personality_type": "rock" 
-            }
-        ]
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": []
     },
     {
         "name": "Tim Cook",
@@ -47,6 +38,8 @@
         "email": "tim.cook@apple.com",
         "password": "io3pjoino3jpinfeoplwdn",
         "linkedin_url": "https://www.linkedin.com/in/tim-cook",
+        "pronouns": "he/him",
+        "cookie": null,
         "reports": []
     },
     {
@@ -55,6 +48,8 @@
         "email": "steve.jobs@apple.com",
         "password": "ih2if90hioubrnifjpionujk",
         "linkedin_url": "https://www.linkedin.com/in/steve-jobs",
+        "pronouns": "he/him",
+        "cookie": null,
         "reports": []
     },
     {
@@ -63,6 +58,8 @@
         "email": "sergey.brin@apple.com",
         "password": "dgshua0rh31ui2e90u8hr3",
         "linkedin_url": "https://www.linkedin.com/in/sergey-brin",
+        "pronouns": "he/him",
+        "cookie": null,
         "reports": []
     },
     {
@@ -71,6 +68,8 @@
         "email": "sundar.pichai@google.com",
         "password": "ije2oopkrji1w2p-fj0pi12-k0",
         "linkedin_url": "https://www.linkedin.com/in/sundar-pichai",
+        "pronouns": "he/him",
+        "cookie": null,
         "reports": [
             {
                 "report_id": 0,

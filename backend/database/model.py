@@ -1,4 +1,5 @@
 import os
+import random
 import pymongo
 from datetime import datetime
 import numpy as np
@@ -8,6 +9,26 @@ mongo_db = mongo_client["brij"]
 companies = mongo_db["companies"]
 question_bank = mongo_db["question_bank"]
 users = mongo_db["users"]
+
+def assign_cookie(email):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+    
+    new_cookie = ''.join(chr(random.randrange(97, 122)) for i in range(64))
+    found_user["cookie"] = new_cookie
+
+    users.delete_one({"email": email})
+    users.insert_one(found_user)
+
+    return new_cookie
+
+def login_with_cookie(cookie):
+    found_user = users.find_one({"cookie": cookie})
+    if not found_user:
+        return None
+
+    return found_user["email"]
 
 def createNewCompany(company_name, admin_full_name, admin_email, password):
     found_company = companies.find_one({"company_name": company_name})
@@ -43,6 +64,8 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
             "email": admin_email,
             "password": password,
             "linkedin_url": None,
+            "pronouns": None,
+            "cookie": None,
             "reports": []
         }
     )
@@ -97,9 +120,12 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
             "email": employee_email,
             "password": employee_password,
             "linkedin_url": linkedin_url,
+            "pronouns": pronouns,
+            "cookie": None,
             "reports": []
         }
     )   
     return True
 
-print(createNewEmployee("Yanney OU","yaedb@gmail.com","meowmeow","ABC Inc.", "yabsdjhb"))
+print(createNewEmployee("Yanney OU","yaedb@gmail.com","meowmeow","ABC Inc.", "yabsdjhb", "she/her"))
+print(assign_cookie("tim.cook@apple.com"))
