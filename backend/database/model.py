@@ -48,4 +48,7 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
 
     return True
 
-print(createNewCompany("Acme Inc.", "Acme Admin", "admin@acme.com", "password"))
+def createNewEmployee(employee_name, employee_email, employee_company, linkedin_url, pronouns):
+    
+
+print(createNewCompany("ABC Inc.", "ABC Admin", "admin@abc.com", "password"))
