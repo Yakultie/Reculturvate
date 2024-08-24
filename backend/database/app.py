@@ -8,27 +8,27 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('company-sign-up.html')
 
 @app.route('/company_signup', methods=['GET'])
 def company_signup_get():
-    return render_template('company_signup.html')
+    return render_template('company-sign-up.html')
 
 @app.route('/company_signup', methods=['POST'])
 def company_signup_post():
     # do logic
-    return render_template('company_signup.html', msg="Company signed up successfully!")
+    return render_template('company-sign-up.html', msg="Company signed up successfully!")
 
 @app.route('/employee_onboard', methods=['GET'])
 def employee_onboard_get():
-    return render_template('employee_onboard.html')
+    return render_template('employee-onboarding.html')
 
 @app.route('/employee_onboard', methods=['POST'])
 def employee_onboard_post():
     email = request.form['email']
     # validate email exists in unactivated users list
     # do logic
-    return render_template('employee_signup.html', email=email)
+    return render_template('employee-onboarding.html', email=email)
 
 @app.route('/employee_signup', methods=['POST'])
 def employee_signup_post():
@@ -37,7 +37,7 @@ def employee_signup_post():
     linkedin_url = request.form['linkedin_url']
     pronouns = request.form['pronouns']
     # do logic
-    return render_template('employee_signup.html', msg="Employee signed up successfully!")
+    return render_template('employee-onboarding.html', msg="Employee signed up successfully!")
 
 @app.route('/login', methods=['GET'])
 def login_get():
@@ -58,7 +58,7 @@ def answer_question_post():
         generated_report_id = generate_individual_report()
         return redirect("/retrieve_individual_report/{0}".format(generated_report_id))
     else:
-        return render_template('questionnaire.html', question=question, answer_options = [])
+        return render_template('questions.html', question=question, answer_options = [])
 
 @app.route('/retrieve_individual_report/<report_id>', methods=['GET'])
 def retrieve_individual_report_get(report_id):
