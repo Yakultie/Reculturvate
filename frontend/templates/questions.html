@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <section class="section">
         <div class="questionnaire-container">
             <div class="question visible" id="question1">
-                <p class="question-text">What is your favorite programming language?</p>
+                <p class="question-text">{{ question }}</p>
                 <div class="options">
-                    <div class="option" onclick="selectOption('Python', 'question2')">Python</div>
-                    <div class="option" onclick="selectOption('JavaScript', 'question2')">JavaScript</div>
-                    <div class="option" onclick="selectOption('Java', 'question2')">Java</div>
-                    <div class="option" onclick="selectOption('C++', 'question2')">C++</div>
+                    {% for answer_option in answer_options %}
+                    <div class="option" onclick="window.location='/answer_question/{{ question_id }}/{{ answer_option }}'">{{ answer_option }}</div>
+                    {% endfor %}
                 </div>
             </div>
-
+            
+            <!--
             <div class="question hidden" id="question2">
                 <p class="question-text">What is your preferred development environment?</p>
                 <div class="options">
@@ -43,6 +43,7 @@
             <div class="question hidden" id="submit">
                 <p class="question-text">Thank you for completing the questionnaire!</p>
             </div>
+            -->
         </div>
     </section>
     <script src="script.js"></script>
