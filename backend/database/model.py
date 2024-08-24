@@ -186,4 +186,11 @@ def retrieveValidCompanyReports(email):
     company_names = [company.get("company_name") for company in companies_with_reports]
     return company_names
 
+def getIndividualReport(email, report_id):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+    reports = found_user.get("reports", [])
+    report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
+    return report
 print(assign_cookie("tim.cook@apple.com"))

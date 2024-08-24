@@ -92,7 +92,10 @@ def answer_question_post():
 
 @app.route('/retrieve_individual_report/<report_id>', methods=['GET'])
 def retrieve_individual_report_get(report_id):
-    # do logic
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    report = model.getIndividualReport(email, report_id)
+    print(report)
     return render_template('individual_report.html')
 
 @app.route('/generate_company_report', methods=["POST"])
