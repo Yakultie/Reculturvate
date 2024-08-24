@@ -4,7 +4,7 @@ import datetime
 from flask import Flask, render_template, request, make_response, url_for, send_from_directory, redirect
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../../frontend/templates')
 
 @app.route('/')
 def index():
