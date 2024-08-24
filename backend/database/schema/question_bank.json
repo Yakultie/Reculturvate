@@ -1,0 +1,23 @@
+[
+    {
+        "question": "Are you quiet?",
+        "mappings": [
+            {"category": "communication", "value": -1},
+            {"category": "teamwork", "value": -1}
+        ]
+    },
+    {
+        "question": "Do you like to work in groups?",
+        "mappings": [
+            {"category": "teamwork", "value": 1},
+            {"category": "leadership_structure", "value": 1}            
+        ]
+    },
+    {
+        "question": "Do you like winging things?",
+        "mappings": [
+            {"category": "adaptability", "value": 1},
+            {"category": "time_management", "value": -1}
+        ]
+    }
+]

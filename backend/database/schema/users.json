@@ -1,0 +1,76 @@
+[
+    {
+        "name": "John Appleseed",
+        "company": "Apple, Inc.",
+        "email": "john.appleseed@apple.com",
+        "password": "feboqwueibhijneoifwjunbhjnronq",
+        "linkedin_url": "https://www.linkedin.com/in/john-appleseed",
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.8,
+                    "communication": 0.9,
+                    "adaptability": 0.3,
+                    "teamwork": 0.6,
+                    "leadership_structure": 0.0
+                },
+                "description": "You are great at active communication and time management, believing in a top-down leadership structure. However, you struggle with adaptability and teamwork.",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Sam Sung",
+        "company": "Apple, Inc.",
+        "email": "sam.sung@apple.com",
+        "password": null,
+        "linkedin_url": null,
+        "reports": []
+    },
+    {
+        "name": "Tim Cook",
+        "company": "Apple, Inc.",
+        "email": "tim.cook@apple.com",
+        "password": "io3pjoino3jpinfeoplwdn",
+        "linkedin_url": "https://www.linkedin.com/in/tim-cook",
+        "reports": []
+    },
+    {
+        "name": "Steve Jobs",
+        "company": "Apple, Inc.",
+        "email": "steve.jobs@apple.com",
+        "password": "ih2if90hioubrnifjpionujk",
+        "linkedin_url": "https://www.linkedin.com/in/steve-jobs",
+        "reports": []
+    },
+    {
+        "name": "Sergey Brin",
+        "company": "Google, LLC",
+        "email": "sergey.brin@apple.com",
+        "password": "dgshua0rh31ui2e90u8hr3",
+        "linkedin_url": "https://www.linkedin.com/in/sergey-brin",
+        "reports": []
+    },
+    {
+        "name": "Sundar Pichai",
+        "company": "Google, LLC",
+        "email": "sundar.pichai@google.com",
+        "password": "ije2oopkrji1w2p-fj0pi12-k0",
+        "linkedin_url": "https://www.linkedin.com/in/sundar-pichai",
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.6,
+                    "communication": 0.4,
+                    "adaptability": 0.4,
+                    "teamwork": 0.6,
+                    "leadership_structure": 0.9
+                },
+                "description": "You are great at time management and teamwork, but communication and adaptability are areas that need improvement. You believe in a flat leadership structure.",
+                "personality_type": "beaver"
+            }
+        ]
+    }
+]

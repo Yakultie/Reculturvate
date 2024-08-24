@@ -1,0 +1,160 @@
+[
+    {
+        "name": "Apple, Inc.",
+        "logo_path": "logos/apple.png",
+        "power_users": [
+            {
+                "name": "Tim Cook",
+                "email": "tim.cook@apple.com"
+            },
+            {
+                "name": "Steve Jobs",
+                "email": "steve.jobs@apple.com"
+            }
+        ],
+        "employees": [
+            {
+                "name": "John Appleseed",
+                "email": "john.appleseed@apple.com"
+            },
+            {
+                "name": "Sam Sung",
+                "email": "sam.sung@apple.com"
+            }
+        ],
+        "internal_reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": {
+                        "score": 0.8,
+                        "note": null
+                    },
+                    "communication": {
+                        "score": 0.9,
+                        "note": null
+                    },
+                    "adaptability": {
+                        "score": 0.3,
+                        "note": null
+                    },
+                    "teamwork": {
+                        "score": 0.6,
+                        "note": "Be aware: there is a nearly equal distribution of employees with teamwork scores from both sides of the scale. Therefore, the nature of teamwork represented on this scale is a statistical mean of all employees and does not reflect the nature of teamwork for every employee."
+                    },
+                    "leadership_structure": {
+                        "score": 0.0,
+                        "note": null
+                    }
+                },
+                "description": "This report is a summary of the work culture at Apple, Inc. Time management is a strong suit for most employees, but adaptability is an area that needs improvement. Communication and leadership are also strong suits, but teamwork is a mixed bag.",
+                "work_culture_type": "type_one" 
+            }
+        ],
+        "collaborative_reports": [
+            {
+                "report_id": 0,
+                "collaborating_company": "Google, LLC",
+                "trait_discrepancies": {
+                    "time_management": {
+                        "score": 0.2,
+                        "note": null
+                    },
+                    "communication": {
+                        "score": 0.5,
+                        "note": null
+                    },
+                    "adaptability": {
+                        "score": 0.1,
+                        "note": null
+                    },
+                    "teamwork": {
+                        "score": 0.0,
+                        "note": null
+                    },
+                    "leadership_structure": {
+                        "score": 0.9,
+                        "note": "Attention! There is a significant discrepancy in the leadership structure of both companies, where Apple believes in a top-down hirearchical structure and Google believes in a flat structure. This could be a potential source of conflict in the workplace."
+                    }
+                },
+                "description": "This report is a comparison of the work cultures of Apple, Inc. and Google, LLC. Apple, Inc. has a strong work culture in time management and communication, but needs improvement in adaptability and teamwork. Google, LLC has a strong work culture in leadership structure, but needs improvement in time management, communication, adaptability, and teamwork. The most significant discrepancy is in the leadership structure, where Apple, Inc. has a top-down hierarchical structure and Google, LLC has a flat structure. This could be a potential source of conflict in the workplace.",
+                "compatibility_type": "needs_attention"
+            }
+        ]
+    },
+    {
+        "name": "Google, LLC",
+        "logo_path": "logos/google.png",
+        "power_users": [
+            {
+                "name": "Sergey Brin",
+                "email": "sergey.brin@google.com"
+            }
+        ],
+        "employees": [
+            {
+                "name": "Sundar Pichai",
+                "email": "sundar.pichai@google.com"
+            }
+        ],
+        "internal_reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": {
+                        "score": 0.6,
+                        "note": null
+                    },
+                    "communication": {
+                        "score": 0.4,
+                        "note": null
+                    },
+                    "adaptability": {
+                        "score": 0.4,
+                        "note": null
+                    },
+                    "teamwork": {
+                        "score": 0.6,
+                        "note": null
+                    },
+                    "leadership_structure": {
+                        "score": 0.9,
+                        "note": null
+                    }
+                },
+                "description": "This report is a summary of the work culture at Google, LLC. Time management and teamwork are strong suits for most employees, but communication and adaptability are areas that need improvement. Leadership is a mixed bag.",
+                "work_culture_type": "type_two" 
+            }
+        ],
+        "collaborative_reports": [
+            {
+                "report_id": 0,
+                "collaborating_company": "Google, LLC",
+                "trait_discrepancies": {
+                    "time_management": {
+                        "score": 0.2,
+                        "note": null
+                    },
+                    "communication": {
+                        "score": 0.5,
+                        "note": null
+                    },
+                    "adaptability": {
+                        "score": 0.1,
+                        "note": null
+                    },
+                    "teamwork": {
+                        "score": 0.0,
+                        "note": null
+                    },
+                    "leadership_structure": {
+                        "score": 0.9,
+                        "note": "Attention! There is a significant discrepancy in the leadership structure of both companies, where one believes in a top-down hirearchical structure and the other believes in a flat structure. This could be a potential source of conflict in the workplace."
+                    }
+                },
+                "description": "This report is a comparison of the work cultures of Apple, Inc. and Google, LLC. Apple, Inc. has a strong work culture in time management and communication, but needs improvement in adaptability and teamwork. Google, LLC has a strong work culture in leadership structure, but needs improvement in time management, communication, adaptability, and teamwork. The most significant discrepancy is in the leadership structure, where Apple, Inc. has a top-down hierarchical structure and Google, LLC has a flat structure. This could be a potential source of conflict in the workplace.",
+                "compatibility_type": "needs_attention"
+            }
+        ]
+    }
+]
