@@ -190,3 +190,42 @@ body {
 .company-table tbody tr:hover {
     background-color: #f5f5f5; /* Light gray background on hover */
 }
+
+.scale-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; /* Add padding to avoid content touching edges */
+}
+
+.scales-container {
+    display: flex;
+    flex-direction: column; /* Stack scales vertically */
+    gap: 20px; /* Space between scales */
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+}
+
+.scale {
+    position: relative;
+    width: 80%; /* Adjust the width as needed */
+    height: 40px; /* Height of the scale */
+    background: #ccc; /* Light gray background for the scale */
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Padding on the sides */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.line {
+    position: absolute;
+    left: 50%; /* Position the line in the middle of the scale */
+    width: 5px; /* Width of the vertical line */
+    height: 100%; /* Full height of the scale */
+    background: #f00; /* Line color */
+    top: 0; /* Align the line to the top of the scale */
+    transform: translateX(-50%); /* Center the line horizontally */
+}
