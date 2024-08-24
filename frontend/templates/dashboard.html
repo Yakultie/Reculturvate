@@ -1,4 +1,55 @@
-<html>
-    <h1>Welcome to Dashboard!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<h1>Welcome to Dashboard!</h1>
     <a href="/logout">Logout</a>
+<body>
+    <section class="table-section">
+        <div class="columns is-centered">
+            <div class="column is-full"> 
+                <h1 class="title has-text-centered">Company Dashboard</h1>
+                <form action="#" method="POST">
+                    <div class="table-container"> <!-- New container for table responsiveness -->
+                        <table class="company-table">  
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Company</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>johndoe@example.com</td>
+                                    <td>Atlassian</td>
+                                    <td>Completed</td>
+                                </tr>
+                                <tr>
+                                    <td>Nathan Lai</td>
+                                    <td>potatofartzie@gmail.com</td>
+                                    <td>Optiver</td>
+                                    <td>Incomplete</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="buttons has-text-right"> <!-- Align buttons to the right -->
+                        <button class="btn-1">Add</button>
+                        <button class="btn-1">Generate Report</button>
+                        <button class="btn-1">Action Plan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
