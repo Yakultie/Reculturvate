@@ -117,7 +117,7 @@ def retrieve_company_report_get(report_id):
     report = model.retrieveCompanyReport(email, report_id)
     if report != False:
         print(report)
-        return render_template('company_report.html')
+        return render_template('report.html')
     else:
         return render_template('error.html')
 
