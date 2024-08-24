@@ -191,6 +191,8 @@ body {
     background-color: #f5f5f5; /* Light gray background on hover */
 }
 
+
+
 .scale-section {
     display: flex;
     justify-content: center;
@@ -208,9 +210,23 @@ body {
     align-items: center;
 }
 
+.scale-group {
+    position: relative; /* Positioning context for labels and scales */
+    width: 80%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+}
+
+.scale-label {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Space between label and scale */
+    text-align: center;
+}
+
 .scale {
     position: relative;
-    width: 80%; /* Adjust the width as needed */
+    width: 100%; /* Full width of the scale container */
     height: 40px; /* Height of the scale */
     background: #ccc; /* Light gray background for the scale */
     border-radius: 20px; /* Rounded corners */
@@ -218,11 +234,26 @@ body {
     align-items: center;
     padding: 0 20px; /* Padding on the sides */
     box-sizing: border-box; /* Ensures padding is included in the width */
+    overflow: hidden; /* Hide overflow to ensure labels fit */
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between; /* Space out labels */
+    width: 100%; /* Full width of the scale */
+    margin-top: 5px; /* Space between scale and labels */
+    position: relative;
+    font-size: 1rem;
+    color: #ccc; /* Dark text color for labels */
+}
+
+.label-left, .label-right {
+    font-size: 1rem;
 }
 
 .line {
     position: absolute;
-    left: 50%; /* Position the line in the middle of the scale */
+    left: var(--line-position, 50%); /* Use the CSS variable for positioning */
     width: 5px; /* Width of the vertical line */
     height: 100%; /* Full height of the scale */
     background: #f00; /* Line color */
