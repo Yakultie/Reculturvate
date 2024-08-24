@@ -13,25 +13,39 @@
             <div class="columns is-centered">
                 <div class="column is-4">
                     <h1 class="title has-text-centered">Sign Up</h1>
-                    <form action="#" method="POST">
+                    {% if msg %}
+                    <article class="message is-warning">
+                        <div class="message-body">
+                            {{ msg }}
+                        </div>
+                      </article>
+                    {% endif %}
+                    <form action="/company_signup" method="POST">
                         <div class="field">
                             <label class="label">Company Name</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Enter your company name" required>
+                                <input name="company_name" class="input" type="text" placeholder="Enter your company name" required>
                             </div>
                         </div>
 
                         <div class="field">
-                            <label class="label">Company Email</label>
+                            <label class="label">Company Representative Name</label>
                             <div class="control">
-                                <input class="input" type="email" placeholder="Enter your company email" required>
+                                <input name="company_rep_name" class="input" type="text" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Company Representative Email</label>
+                            <div class="control">
+                                <input name="company_email" class="input" type="email" placeholder="Enter your company email" required>
                             </div>
                         </div>
 
                         <div class="field">
                             <label class="label">Set Password</label>
                             <div class="control">
-                                <input class="input" type="password" placeholder="Enter a password" required>
+                                <input name="password" class="input" type="password" placeholder="Enter a password" required>
                             </div>
                         </div>
 
@@ -41,6 +55,7 @@
                             </div>
                         </div>
                     </form>
+                    <br />
                     <p class="has-text-centered">
                         Already registered? <a href="#">Login here</a>.
                     </p>

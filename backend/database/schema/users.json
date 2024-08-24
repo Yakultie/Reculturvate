@@ -84,5 +84,465 @@
                 "personality_type": "beaver"
             }
         ]
+    },
+    {
+        "name": "Fake One",
+        "company": "Apple, Inc.",
+        "email": "fake.one@apple.com",
+        "password": "oneoneone",
+        "linkedin_url": "https://www.linkedin.com/in/fake-one",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake one description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Two",
+        "company": "Apple, Inc.",
+        "email": "fake.two@apple.com",
+        "password": "twotwotwo",
+        "linkedin_url": "https://www.linkedin.com/in/fake-two",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake two description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Three",
+        "company": "Apple, Inc.",
+        "email": "fake.three@apple.com",
+        "password": "threethreethree",
+        "linkedin_url": "https://www.linkedin.com/in/fake-three",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake three description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Four",
+        "company": "Apple, Inc.",
+        "email": "fake.four@apple.com",
+        "password": "fourfourfour",
+        "linkedin_url": "https://www.linkedin.com/in/fake-four",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake four description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Five",
+        "company": "Apple, Inc.",
+        "email": "fake.five@apple.com",
+        "password": "fivefivefive",
+        "linkedin_url": "https://www.linkedin.com/in/fake-five",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake five description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Six",
+        "company": "Apple, Inc.",
+        "email": "fake.six@apple.com",
+        "password": "sixsixsix",
+        "linkedin_url": "https://www.linkedin.com/in/fake-six",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake six description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Seven",
+        "company": "Apple, Inc.",
+        "email": "fake.seven@apple.com",
+        "password": "sevensevenseven",
+        "linkedin_url": "https://www.linkedin.com/in/fake-seven",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake seven description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Eight",
+        "company": "Apple, Inc.",
+        "email": "fake.eight@apple.com",
+        "password": "eighteighteight",
+        "linkedin_url": "https://www.linkedin.com/in/fake-eight",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake eight description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Nine",
+        "company": "Apple, Inc.",
+        "email": "fake.nine@apple.com",
+        "password": "nineninenine",
+        "linkedin_url": "https://www.linkedin.com/in/fake-nine",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake nine description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Ten",
+        "company": "Apple, Inc.",
+        "email": "fake.ten@apple.com",
+        "password": "tententen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-ten",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 1.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake ten description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Eleven",
+        "company": "Apple, Inc.",
+        "email": "fake.eleven@apple.com",
+        "password": "eleveneleveneleven",
+        "linkedin_url": "https://www.linkedin.com/in/fake-eleven",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake eleven description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Twelve",
+        "company": "Apple, Inc.",
+        "email": "fake.twelve@apple.com",
+        "password": "twelvetwelvetwelve",
+        "linkedin_url": "https://www.linkedin.com/in/fake-twelve",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake twelve description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Thirteen",
+        "company": "Apple, Inc.",
+        "email": "fake.thirteen@apple.com",
+        "password": "thirteenthirteenthirteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-thirteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake thirteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Fourteen",
+        "company": "Apple, Inc.",
+        "email": "fake.fourteen@apple.com",
+        "password": "fourteenfourteenfourteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-fourteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake fourteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Fifteen",
+        "company": "Apple, Inc.",
+        "email": "fake.fifteen@apple.com",
+        "password": "fifteenfifteenfifteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-fifteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake fifteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Sixteen",
+        "company": "Apple, Inc.",
+        "email": "fake.sixteen@apple.com",
+        "password": "sixteensixteensixteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-sixteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake sixteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Seventeen",
+        "company": "Apple, Inc.",
+        "email": "fake.seventeen@apple.com",
+        "password": "seventeenseventeenseventeen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-seventeen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake seventeen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Eighteen",
+        "company": "Apple, Inc.",
+        "email": "fake.eighteen@apple.com",
+        "password": "eighteeneighteeneighteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-eighteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake eighteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Nineteen",
+        "company": "Apple, Inc.",
+        "email": "fake.nineteen@apple.com",
+        "password": "nineteennineteennineteen",
+        "linkedin_url": "https://www.linkedin.com/in/fake-nineteen",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake nineteen description",
+                "personality_type": "rock" 
+            }
+        ]
+    },
+    {
+        "name": "Fake Twenty",
+        "company": "Apple, Inc.",
+        "email": "fake.twenty@apple.com",
+        "password": "twentytwentytwenty",
+        "linkedin_url": "https://www.linkedin.com/in/fake-twenty",
+        "pronouns": "he/him",
+        "cookie": null,
+        "reports": [
+            {
+                "report_id": 0,
+                "traits": {
+                    "time_management": 0.0,
+                    "communication": 0.5,
+                    "adaptability": 0.5,
+                    "teamwork": 0.5,
+                    "leadership_structure": 0.5
+                },
+                "description": "Fake twenty description",
+                "personality_type": "rock" 
+            }
+        ]
     }
 ]

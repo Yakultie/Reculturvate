@@ -3,6 +3,7 @@ import os
 import datetime
 from flask import Flask, render_template, request, make_response, url_for, send_from_directory, redirect
 from werkzeug.utils import secure_filename
+import model
 
 app = Flask(__name__, template_folder='../../frontend/templates')
 
@@ -16,8 +17,15 @@ def company_signup_get():
 
 @app.route('/company_signup', methods=['POST'])
 def company_signup_post():
-    # do logic
-    return render_template('company-sign-up.html', msg="Company signed up successfully!")
+    company_name = request.form['company_name']
+    company_rep_name = request.form['company_rep_name']
+    company_email = request.form['company_email']
+    password = request.form['password']
+    company_created = model.createNewCompany(company_name, company_rep_name, company_email, password)
+    if company_created:
+        return render_template('company-sign-up.html', msg="Company signed up successfully!")
+    else:
+        return render_template('company-sign-up.html', msg="Company creation failed, please try again!")
 
 @app.route('/employee_onboard', methods=['GET'])
 def employee_onboard_get():
