@@ -1,6 +1,6 @@
 [
     {
-        "name": "Apple, Inc.",
+        "company_name": "Apple, Inc.",
         "power_users": [
             {
                 "name": "Tim Cook",
@@ -82,7 +82,7 @@
         ]
     },
     {
-        "name": "Google, LLC",
+        "company_name": "Google, LLC",
         "power_users": [
             {
                 "name": "Sergey Brin",
