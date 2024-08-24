@@ -1,6 +1,7 @@
 import os
 import random
 import pymongo
+import string
 from datetime import datetime
 import numpy as np
 
@@ -10,16 +11,17 @@ companies = mongo_db["companies"]
 question_bank = mongo_db["question_bank"]
 users = mongo_db["users"]
 
+def generate_secure_cookie():
+    """Generates a secure random cookie."""
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=64))
+
 def assign_cookie(email):
     found_user = users.find_one({"email": email})
     if not found_user:
         return None
     
-    new_cookie = ''.join(chr(random.randrange(97, 122)) for i in range(64))
-    found_user["cookie"] = new_cookie
-
-    users.delete_one({"email": email})
-    users.insert_one(found_user)
+    new_cookie = generate_secure_cookie()
+    users.update_one({"email": email}, {"$set": {"cookie": new_cookie}})
 
     return new_cookie
 
