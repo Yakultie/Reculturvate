@@ -109,6 +109,7 @@ def generateCompanyAverages(company_name):
             outliers = [score for score in scores if score < lower_bound or score > upper_bound]
         
             company_averages[trait] = mean
+            # NEED TO UPDATE NOTE IN DATABASE HERE
             if len(outliers)/len(scores) > 0.4:
                 issues[trait] = 'Yes'
             else:
@@ -143,37 +144,31 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
     return True
 
 def retrieveCompanyReportFromEmail(email, report_id):
-    found_user = users.find({"email": email})
-
+    found_user = users.find_one({"email": email})
     if not found_user:
         return False
-    
-    company = found_user["company"]
-
-    found_company = users.find({"company": company_name})
+    company_name = found_user["company"]
+    found_company = companies.find_one({"company_name": company_name})
     power_users = found_company["power_users"]
-    if email in power_users:
-        reports = company['internal_reports']
-        for report in reports:
-            if report["report_id"] == report_id:
-                return report
+    for entry in power_users:
+        if entry['email'] == email:
+            reports = found_company['internal_reports']
+            print(reports)
+            for report in reports:
+                if int(report["report_id"]) == int(report_id):
+                    return report
     else:
         return False
     
-def retrieveCompanyReportIdsFromEmail(email):
-    found_user = users.find({"email": email})
-
-    if not found_user:
-        return False
-    
-    company = found_user["company"]
-
-    found_company = users.find({"company": company_name})
-    power_users = found_company["power_users"]
-    if email in power_users:
-        reports = company['internal_reports']
-        return reports
-    else:
-        return []
+def retrieveValidCompanyReports(email):
+    companies_with_reports = companies.find({
+        "internal_reports": {"$exists": True, "$ne": []},
+        "$nor": [  
+            {"power_users.email": email},
+            {"employees.email": email}
+        ]
+    })
+    company_names = [company.get("company_name") for company in companies_with_reports]
+    return company_names
 
 print(assign_cookie("tim.cook@apple.com"))
