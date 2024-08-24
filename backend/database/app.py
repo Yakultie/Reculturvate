@@ -123,12 +123,9 @@ def generate_collaborative_report_post():
 
 @app.route('/retrieve_collaborative_report/<collaborative_report_id>', methods=['GET'])
 def collaborative_report_get(collaborative_report_id):
-    print("COLLABORATIVE ID", collaborative_report_id)
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    print("email", email)
     report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
-    print("report yeteraereare", report)
     if report != False:
         return render_template('collaborative_report.html')
     else:
