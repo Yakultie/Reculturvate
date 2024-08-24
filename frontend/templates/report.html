@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> --> 
+    <link rel="stylesheet" href = "style.css">
 </head>
 <body>
     <section class="scale-section">
@@ -72,11 +73,13 @@
                     <span class="label-right">100</span>
                 </div>
             </div>
-            <!-- Add more scales as needed -->
         </div>
     </section>
-    <section>
-        
+    <section class="action-plan">
+        <div class="action-plan-container">
+            
+            <p class="placeholder-text">Your action plan will be displayed here...</p>
+        </div>
     </section>
 </body>
 </html>
