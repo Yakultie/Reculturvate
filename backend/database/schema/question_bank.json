@@ -1,23 +1,33 @@
 [
     {
-        "question": "Are you quiet?",
+        "question": "Question 1?",
+        "category": "communication",
         "mappings": [
-            {"category": "communication", "value": -1},
-            {"category": "teamwork", "value": -1}
+            {"answer": "answer a", "value": 0.2},
+            {"answer": "answer b", "value": 0.4},
+            {"answer": "answer c", "value": 0.6},
+            {"answer": "answer d", "value": 0.8}
         ]
     },
     {
-        "question": "Do you like to work in groups?",
+        "question": "Question 2?",
+        "category": "leadership",
         "mappings": [
-            {"category": "teamwork", "value": 1},
-            {"category": "leadership_structure", "value": 1}            
+            {"answer": "answer a", "value": 0.2},
+            {"answer": "answer b", "value": 0.4},
+            {"answer": "answer c", "value": 0.6},
+            {"answer": "answer d", "value": 0.8}
         ]
     },
     {
-        "question": "Do you like winging things?",
+        "question": "Question 3?",
+        "category": "time_management",
         "mappings": [
-            {"category": "adaptability", "value": 1},
-            {"category": "time_management", "value": -1}
+            {"answer": "answer a", "value": 0.2},
+            {"answer": "answer b", "value": 0.4},
+            {"answer": "answer c", "value": 0.6},
+            {"answer": "answer d", "value": 0.8}
         ]
     }
 ]
+
