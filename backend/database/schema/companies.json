@@ -1,7 +1,6 @@
 [
     {
         "name": "Apple, Inc.",
-        "logo_path": "logos/apple.png",
         "power_users": [
             {
                 "name": "Tim Cook",
@@ -84,7 +83,6 @@
     },
     {
         "name": "Google, LLC",
-        "logo_path": "logos/google.png",
         "power_users": [
             {
                 "name": "Sergey Brin",
