@@ -8,9 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    alert_message = model.get_latest_alert()
-    upcoming_events = model.get_three_upcoming_events()
-    return render_template('index.html', alert_message=alert_message, upcoming_events=upcoming_events)
+    return render_template('index.html')
 
 @app.route('/company_signup', methods=['GET'])
 def company_signup_get():
