@@ -59,16 +59,17 @@ body {
 
 .option {
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer; /* Pointer cursor on hover */
     margin-bottom: 10px; /* Space between options */
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
 }
 
 .option:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Light hover background */
     color: #f9e506; /* Hover text color */
+    transform: scale(1.2); /* Increase size by 5% on hover */
 }
 
 
@@ -127,4 +128,19 @@ body {
     box-shadow: inset 500px 0 0 0 #f9e506;
     cursor: pointer;
     color: #000; 
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.question.visible {
+    animation: zoomIn 0.5s ease forwards;
 }
