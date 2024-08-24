@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="question" id="question1">
+            <p>What is your name?</p>
+            <input type="text" id="answer1">
+            <button onclick="showNextQuestion('question2')">Next</button>
+        </div>
+
+        <div class="question hidden" id="question2">
+            <p>What is your favorite color?</p>
+            <input type="text" id="answer2">
+            <button onclick="showNextQuestion('question3')">Next</button>
+        </div>
+
+        <div class="question hidden" id="question3">
+            <p>What is your favorite hobby?</p>
+            <input type="text" id="answer3">
+            <button onclick="showNextQuestion('submit')">Submit</button>
+        </div>
+
+        <div class="hidden" id="submit">
+            <p>Thank you for completing the questionnaire!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
