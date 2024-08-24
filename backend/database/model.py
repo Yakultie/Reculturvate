@@ -82,38 +82,53 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
 
     return True
 
-def generateCompanyAverages(company_name):
+def generateCompanyAverages(email):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return False
+    
+    company_name = found_user["company"]
+    found_company = companies.find_one({"company_name": company_name})
+    power_users = found_company["power_users"]
+    
+    is_power_user = any(entry['email'] == email for entry in power_users)
+    if not is_power_user:
+        return False
+    
     usrs = users.find({"company": company_name})
-    count = 0
-    issues = {}
     all_traits = {}
+    issues = {}
     
     for user in usrs:
-        reps = user["reports"]
-        if reps != []:
-            latest_report = max(reps, key=lambda reps: reps["report_id"])
+        reps = user.get("reports", [])
+        if reps:
+            latest_report = max(reps, key=lambda report: report["report_id"])
             traits = latest_report["traits"]
-            for trait in traits:
+            for trait, score_data in traits.items():
                 if trait not in all_traits:
                     all_traits[trait] = []
-                all_traits[trait].append(traits[trait])
-    
+                # Append the score directly
+                all_traits[trait].append(score_data)
+
     company_averages = {}
     
     for trait, scores in all_traits.items():
-        
         if scores:
-            mean = np.mean(scores)        
+            mean = np.mean(scores)
             lower_bound = mean - 0.4
             upper_bound = mean + 0.4
             outliers = [score for score in scores if score < lower_bound or score > upper_bound]
         
             company_averages[trait] = mean
-            # NEED TO UPDATE NOTE IN DATABASE HERE
             if len(outliers)/len(scores) > 0.4:
                 issues[trait] = 'Yes'
             else:
                 issues[trait] = 'No'
+
+    companies.update_one(
+        {"company_name": company_name},
+        {"$set": {"note": issues}}
+    )
     
     return company_averages, issues
 
@@ -171,4 +186,11 @@ def retrieveValidCompanyReports(email):
     company_names = [company.get("company_name") for company in companies_with_reports]
     return company_names
 
+def getIndividualReport(email, report_id):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+    reports = found_user.get("reports", [])
+    report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
+    return report
 print(assign_cookie("tim.cook@apple.com"))

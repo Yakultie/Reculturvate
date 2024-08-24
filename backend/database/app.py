@@ -92,14 +92,20 @@ def answer_question_post():
 
 @app.route('/retrieve_individual_report/<report_id>', methods=['GET'])
 def retrieve_individual_report_get(report_id):
-    # do logic
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    report = model.getIndividualReport(email, report_id)
+    print(report)
     return render_template('individual_report.html')
 
 @app.route('/generate_company_report', methods=["POST"])
 def generate_company_report_post():
     # do logic
-    generated_company_report_id = generate_company_report()
-    # report_averages, issues = generateCompanyAverages(company_name)
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    report_averages, issues = model.generateCompanyAverages(email)
+    print(report_averages, issues)
+    # generated_company_report_id = generate_company_report()
     return redirect("/retrieve_company_report/{0}".format(generated_company_report_id))
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])
@@ -117,12 +123,9 @@ def generate_collaborative_report_post():
 
 @app.route('/retrieve_collaborative_report/<collaborative_report_id>', methods=['GET'])
 def collaborative_report_get(collaborative_report_id):
-    print("COLLABORATIVE ID", collaborative_report_id)
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    print("email", email)
     report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
-    print("report yeteraereare", report)
     if report != False:
         return render_template('collaborative_report.html')
     else:
