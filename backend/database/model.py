@@ -211,4 +211,8 @@ def retrieveCompanyReport(email, report_id):
             return report
     return False
 
-
+def getQuestion(n):
+    found_question = question_bank.find_one({"question_id": n})
+    question = found_question["question"]
+    answer_options = [x["answer"] for x in found_question["mappings"]]
+    return question, answer_options

@@ -83,16 +83,22 @@ def logout_get():
     resp = make_response(redirect('/login'))
     resp.delete_cookie("cookie")
     return resp
+
+@app.route('/answer_question', methods=['GET'])
+def answer_question_get():
+    question, answer_options = model.getQuestion(0)
+    return render_template('questions.html', question=question, answer_options=answer_options, question_id=0)
     
-@app.route('/answer_question', methods=['POST'])
-def answer_question_post():
-    # do logic
-    question, answer_options = get_next_question()
+@app.route('/answer_question/<question_id>/<answer>', methods=['GET'])
+def answer_question_get_next(question_id, answer):
+    # do logic to deal with collecting answer and calculating change in values
+    new_question_id = int(question_id) + 1
+    question, answer_options = model.getQuestion(new_question_id)
     if not question:
         generated_report_id = generate_individual_report()
         return redirect("/retrieve_individual_report/{0}".format(generated_report_id))
     else:
-        return render_template('questions.html', question=question, answer_options = [])
+        return render_template('questions.html', question=question, answer_options=answer_options, question_id=new_question_id)
 
 @app.route('/retrieve_individual_report/<report_id>', methods=['GET'])
 def retrieve_individual_report_get(report_id):
