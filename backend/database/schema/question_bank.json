@@ -1,5 +1,12 @@
 [
     {
+        "question": "You’ve unexpectedly been appointed as the Financial Advisor for the Meeps, a quirky and reclusive community known for their eccentric financial habits and unique currency. The Meeps are known for their odd financial practices, such as trading in rare gemstones that are only found in their world and valuing objects based on their “sentimental worth” rather than market value. Your task is to help the Meeps navigate their finances, improve their economic stability, and modernise their approach to managing wealth.",
+        "category": "section",
+        "mappings": [
+            {"answer": "Continue", "value": 0.0}
+        ]
+    },
+    {
         "question": "How would you set a vision for the Meeps?",
         "category": "leadership",
         "mappings": [
@@ -47,6 +54,13 @@
             {"answer": "Develop a comprehensive financial plan and a set of guiding principles that the Meeps can follow, even after you are gone.", "value": 0.4},
             {"answer": "Organise a farewell ceremony to celebrate the community’s progress, leaving them with words of hope for the future.", "value": 0.6},
             {"answer": "Leave without much fanfare, trusting that the seeds you’ve planted will grow in your absence, and that the Meeps will find their way", "value": 0.8}
+        ]
+    },
+    {
+        "question": "Imagine you’re a member of a small research team sent to a remote desert island for a week-long study of the local wildlife. However, due to a freak storm, your boat is damaged, and you're stranded on the island with just a few basic supplies: a flare gun, a box of matches, a small first-aid kit, a multi-tool, a flashlight with extra batteries, and a few days' worth of food and water. You have no way to communicate with the outside world, and the storm has disrupted any potential rescue operations. The island is lush with dense vegetation, and you can hear the sound of a river in the distance.",
+        "category": "section",
+        "mappings": [
+            {"answer": "Continue", "value": 0.0}
         ]
     },
     {
@@ -100,6 +114,13 @@
         ]
     },
     {
+        "question": "You’ve just been hired for a highly unusual job as a “Professional Cloud Shaper” in a fantastical world where clouds are considered works of art. Your role involves traveling across the sky, using a special set of tools and techniques to mold and sculpt clouds into various shapes and patterns for different events and celebrations. Each day, you receive requests to create specific cloud formations in the sky.",
+        "category": "section",
+        "mappings": [
+            {"answer": "Continue", "value": 0.0}
+        ]
+    },
+    {
         "question": "What strategies would you use to excel in your role as a Professional Cloud Shaper? How often would you set goals?",
         "category": "time_management",
         "mappings": [
@@ -147,6 +168,13 @@
             {"answer": "React quickly to repair the tool immediately, even if it means spending extra money or resources.", "value": 0.4},
             {"answer": "Delegate the ongoing projects to another team member while you focus on repairing the tool and communicating with clients about potential delays.", "value": 0.6},
             {"answer": "Use this setback as an opportunity to rethink your business strategy such as investing in backup tools to prevent future disruptions.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "You find yourself unexpectedly transported to a peculiar social setting—a bustling intergalactic bazaar floating in space, where beings from countless planets and dimensions gather to trade, socialize, and celebrate. The bazaar is filled with vibrant colors, exotic smells, and an array of alien cultures and customs. You’re the only human in sight, and everyone around you speaks a mix of unfamiliar languages and uses unusual gestures. With no clear understanding of the bazaar's social norms, you need to navigate this enigmatic environment while trying to make connections and understand the bazaar's unique social dynamics. Your goal is to blend in, learn the local customs, and perhaps even find a way back to your own world.",
+        "category": "section",
+        "mappings": [
+            {"answeer": "Continue", "value": 0.0}
         ]
     },
     {
@@ -200,7 +228,14 @@
         ]
     },
     {
-        "question": "Planning: As the launch date for “The Budget-Bending Wallet” approaches, you look at your calendar. What do you see?",
+        "question": "You've just been appointed as the Lead Strategist for the launch of a highly unconventional financial product: 'The Budget-Bending Wallet.' This wallet promises to not only keep track of your expenses but also dynamically adjust your budget in real-time based on your spending habits and financial goals. Equipped with AI, it uses a mix of predictive algorithms and personalised insights to suggest spending limits, savings strategies, and even offers tailored investment opportunities. The wallet also features a built-in holographic display that shows a 3D projection of your financial health, offering real-time updates and visualisations. Your task is to design a captivating marketing campaign, organise a launch event, and address any concerns about privacy and security regarding the wallet’s data collection and AI capabilities.",
+        "category": "section",
+        "mappings": [
+            {"answeer": "Continue", "value": 0.0}
+        ]
+    },
+    {
+        "question": "As the launch date for “The Budget-Bending Wallet” approaches, you look at your calendar. What do you see?",
         "category": "time_management",
         "mappings": [
             {"answer": "You have an empty calendar, trusting that your intuition and on-the-fly decisions will guide you through the preparations.", "value": 0.2},
@@ -210,7 +245,7 @@
         ]
     },
     {
-        "question": "Procrastination: You’ve been putting off finalising key details for the launch of “The Budget-Bending Wallet.” How do you handle the situation?",
+        "question": "You’ve been putting off finalising key details for the launch of “The Budget-Bending Wallet.” How do you handle the situation?",
         "category": "time_management",
         "mappings": [
             {"answer": "Decide to tackle all the pending tasks immediately, focusing on catching up and completing everything before the deadline.", "value": 0.2},
@@ -220,7 +255,7 @@
         ]
     },
     {
-        "question": "Question 1?",
+        "question": "You find out that a major investor has pulled out just before the launch. How do you respond?s",
         "category": "communication",
         "mappings": [
             {"answer": "React angrily and cause a scene at their office to try to force a reconsideration from the investor.", "value": 0.2},
@@ -239,7 +274,4 @@
             {"answer": "Work out a repayment plan with your friend and address the issue privately.", "value": 0.8}
         ]
     }
- 
-
 ]
-
