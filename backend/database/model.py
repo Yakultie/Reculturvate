@@ -107,9 +107,12 @@ def generateCompanyAverages(email):
             for trait, score_data in traits.items():
                 if trait not in all_traits:
                     all_traits[trait] = []
-                # Append the score directly
-                all_traits[trait].append(score_data)
-
+                # Append the score directly if it's a float
+                if isinstance(score_data, dict):
+                    all_traits[trait].append(score_data.get("score", 0.0))
+                else:
+                    all_traits[trait].append(score_data)
+                    
     company_averages = {}
     
     for trait, scores in all_traits.items():
@@ -120,17 +123,29 @@ def generateCompanyAverages(email):
             outliers = [score for score in scores if score < lower_bound or score > upper_bound]
         
             company_averages[trait] = mean
-            if len(outliers)/len(scores) > 0.4:
+            if len(outliers) / len(scores) > 0.4:
                 issues[trait] = 'Yes'
             else:
                 issues[trait] = 'No'
 
+    # Create a new report
+    new_report_id = max([report["report_id"] for report in found_company.get("internal_reports", [])], default=-1) + 1
+    new_report = {
+        "report_id": new_report_id,
+        "company_name": company_name,
+        "report_averages": company_averages,
+        "issues": issues,
+        "description": "Generated company report based on user data",
+        "work_culture_type": ""
+    }
+    
+
     companies.update_one(
         {"company_name": company_name},
-        {"$set": {"note": issues}}
+        {"$push": {"internal_reports": new_report}}
     )
     
-    return company_averages, issues
+    return company_averages, issues, new_report_id
 
 def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url, pronouns):
     found_employee_email = users.find_one({"email": employee_email})
@@ -193,4 +208,26 @@ def getIndividualReport(email, report_id):
     reports = found_user.get("reports", [])
     report = next((r for r in reports if int(r["report_id"]) == int(report_id)), None)
     return report
-print(assign_cookie("tim.cook@apple.com"))
+
+def retrieveCompanyReport(email, report_id):
+    user = users.find_one({"email": email})
+    if not user:
+        return False
+    company_name = user.get("company")
+    
+    if not company_name:
+        return False
+    company = companies.find_one({"company_name": company_name})
+    if not company or not any(user['email'] == email for user in company.get("power_users", [])):
+        return False
+    reports = company.get("internal_reports", [])
+    for report in reports:
+        if int(report["report_id"]) == int(report_id):
+            return report
+    return False
+
+def getQuestion(n):
+    found_question = question_bank.find_one({"question_id": n})
+    question = found_question["question"]
+    answer_options = [x["answer"] for x in found_question["mappings"]]
+    return question, answer_options

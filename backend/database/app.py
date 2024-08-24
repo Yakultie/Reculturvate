@@ -33,9 +33,13 @@ def employee_onboard_get():
 
 @app.route('/employee_onboard', methods=['POST'])
 def employee_onboard_post():
+
     email = request.form['email']
     # validate email exists in unactivated users list
+    # not sure what the unactivated usersl ist mean, only has email idk???
     # do logic
+    cookie = request.cookies.get("cookie")
+    cookie_email = model.login_with_cookie(cookie)
     return render_template('employee-onboarding.html', email=email)
 
 @app.route('/employee_signup', methods=['POST'])
@@ -79,16 +83,22 @@ def logout_get():
     resp = make_response(redirect('/login'))
     resp.delete_cookie("cookie")
     return resp
+
+@app.route('/answer_question', methods=['GET'])
+def answer_question_get():
+    question, answer_options = model.getQuestion(0)
+    return render_template('questions.html', question=question, answer_options=answer_options, question_id=0)
     
-@app.route('/answer_question', methods=['POST'])
-def answer_question_post():
-    # do logic
-    question, answer_options = get_next_question()
+@app.route('/answer_question/<question_id>/<answer>', methods=['GET'])
+def answer_question_get_next(question_id, answer):
+    # do logic to deal with collecting answer and calculating change in values
+    new_question_id = int(question_id) + 1
+    question, answer_options = model.getQuestion(new_question_id)
     if not question:
         generated_report_id = generate_individual_report()
         return redirect("/retrieve_individual_report/{0}".format(generated_report_id))
     else:
-        return render_template('questions.html', question=question, answer_options = [])
+        return render_template('questions.html', question=question, answer_options=answer_options, question_id=new_question_id)
 
 @app.route('/retrieve_individual_report/<report_id>', methods=['GET'])
 def retrieve_individual_report_get(report_id):
@@ -100,20 +110,20 @@ def retrieve_individual_report_get(report_id):
 
 @app.route('/generate_company_report', methods=["POST"])
 def generate_company_report_post():
-    # do logic
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    report_averages, issues = model.generateCompanyAverages(email)
-    print(report_averages, issues)
-    # generated_company_report_id = generate_company_report()
-    return redirect("/retrieve_company_report/{0}".format(generated_company_report_id))
+    report_averages, issues, report_id = model.generateCompanyAverages(email)
+    return redirect("/retrieve_company_report/{0}".format(report_id))
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])
 def retrieve_company_report_get(report_id):
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    
-    return render_template('company_report.html')
+    report = model.retrieveCompanyReport(email, report_id)
+    if report != False:
+        return render_template('report.html', report=report)
+    else:
+        return render_template('error.html')
 
 @app.route('/generate_collaborative_report', methods=["POST"])
 def generate_collaborative_report_post():
@@ -127,10 +137,9 @@ def collaborative_report_get(collaborative_report_id):
     email = model.login_with_cookie(cookie)
     report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
     if report != False:
-        return render_template('collaborative_report.html')
+        return render_template('collaborative_report.html', report=report)
     else:
-        # should technically display an error
-        return render_template('dashboard.html')
+        return render_template('error.html')
 
 # can change int oa post request from dashboard    
 @app.route('/retrieve_report_ids', methods=['GET'])
@@ -140,20 +149,18 @@ def retrieve_report_ids():
     report_ids = model.retrieveCompanyReportIdsFromEmail(email)
     if report_ids != False:
         #send it to template somewhere
-        print(report_ids)
-        return render_template('collaborative_report.html')
+        # print(report_ids)
+        return render_template('collaborative_report.html', report_ids=report_ids)
     else:
-        # should technically display an error
-        return render_template('dashboard.html')
-    
-# can change int oa post request from dashboard    
+        return render_template('error.html')
+       
 @app.route('/retrieve_valid_company_collaboration_report', methods=['GET'])
 def retrieve_valid_company_collaboration_report():
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
     valid_companies = model.retrieveValidCompanyReports(email)
-    print(valid_companies)
-    return render_template('dashboard.html')
+    # print(valid_companies)
+    return render_template('dashboard.html', valid_companies=valid_companies)
 
 if __name__ == "__main__":
     app.run(debug=True)

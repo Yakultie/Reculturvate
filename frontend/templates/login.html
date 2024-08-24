@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section class="section">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-4">
+                <div class="column is-full">
                     <h1 class="title has-text-centered">Login</h1>
                     {% if msg %}
                     <article class="message is-warning">
@@ -34,10 +35,9 @@
                                 <input name="password" class="input" type="password" placeholder="Enter your password" required>
                             </div>
                         </div>
-
                         <div class="field">
                             <div class="control">
-                                <button class="button is-primary is-fullwidth">Login</button>
+                                <button class="btn-1">Log in</button>
                             </div>
                         </div>
                     </form>
