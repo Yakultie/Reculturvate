@@ -107,9 +107,12 @@ def generateCompanyAverages(email):
             for trait, score_data in traits.items():
                 if trait not in all_traits:
                     all_traits[trait] = []
-                # Append the score directly
-                all_traits[trait].append(score_data)
-
+                # Append the score directly if it's a float
+                if isinstance(score_data, dict):
+                    all_traits[trait].append(score_data.get("score", 0.0))
+                else:
+                    all_traits[trait].append(score_data)
+                    
     company_averages = {}
     
     for trait, scores in all_traits.items():
@@ -120,17 +123,29 @@ def generateCompanyAverages(email):
             outliers = [score for score in scores if score < lower_bound or score > upper_bound]
         
             company_averages[trait] = mean
-            if len(outliers)/len(scores) > 0.4:
+            if len(outliers) / len(scores) > 0.4:
                 issues[trait] = 'Yes'
             else:
                 issues[trait] = 'No'
 
+    # Create a new report
+    new_report_id = max([report["report_id"] for report in found_company.get("internal_reports", [])], default=-1) + 1
+    new_report = {
+        "report_id": new_report_id,
+        "company_name": company_name,
+        "report_averages": company_averages,
+        "issues": issues,
+        "description": "Generated company report based on user data",
+        "work_culture_type": ""
+    }
+    
+
     companies.update_one(
         {"company_name": company_name},
-        {"$set": {"note": issues}}
+        {"$push": {"internal_reports": new_report}}
     )
     
-    return company_averages, issues
+    return company_averages, issues, new_report_id
 
 def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url, pronouns):
     found_employee_email = users.find_one({"email": employee_email})

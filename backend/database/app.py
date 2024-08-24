@@ -104,13 +104,11 @@ def retrieve_individual_report_get(report_id):
 
 @app.route('/generate_company_report', methods=["POST"])
 def generate_company_report_post():
-    # do logic
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    report_averages, issues = model.generateCompanyAverages(email)
-    print(report_averages, issues)
-    # generated_company_report_id = generate_company_report()
-    return redirect("/retrieve_company_report/{0}".format(generated_company_report_id))
+    report_averages, issues, report_id = model.generateCompanyAverages(email)
+    print(report_averages, issues, report_id)
+    return redirect("/retrieve_company_report/{0}".format(report_id))
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])
 def retrieve_company_report_get(report_id):
