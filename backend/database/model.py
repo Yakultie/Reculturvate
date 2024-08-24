@@ -173,6 +173,14 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
     )   
     return True
 
+def retrieveCompanyNameFromEmail(email):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+    
+    company_name = found_user["company"]
+    return company_name
+
 def retrieveCompanyReportFromEmail(email, report_id):
     found_user = users.find_one({"email": email})
     if not found_user:
@@ -217,13 +225,16 @@ def retrieveCompanyReport(email, report_id):
     
     if not company_name:
         return False
+    
     company = companies.find_one({"company_name": company_name})
     if not company or not any(user['email'] == email for user in company.get("power_users", [])):
         return False
+    
     reports = company.get("internal_reports", [])
     for report in reports:
         if int(report["report_id"]) == int(report_id):
             return report
+        
     return False
 
 def getQuestion(n):

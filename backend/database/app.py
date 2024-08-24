@@ -105,8 +105,8 @@ def retrieve_individual_report_get(report_id):
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
     report = model.getIndividualReport(email, report_id)
-    print(report)
-    return render_template('individual_report.html')
+    traits = report["traits"]
+    return render_template('individual-report.html', leadership=(traits["leadership"] * 100), time_management=(traits["time_management"] * 100), communication=(traits["communication"] * 100), adaptability=(traits["adaptability"] * 100), emotional_intelligence=(traits["emotional_intelligence"] * 100), conflict_management=(traits["conflict_management"] * 100))
 
 @app.route('/generate_company_report', methods=["POST"])
 def generate_company_report_post():
@@ -121,7 +121,8 @@ def retrieve_company_report_get(report_id):
     email = model.login_with_cookie(cookie)
     report = model.retrieveCompanyReport(email, report_id)
     if report != False:
-        return render_template('report.html', report=report)
+        traits = report["traits"]
+        return render_template('report.html', leadership=(traits["leadership"]["score"] * 100), time_management=(traits["time_management"]["score"] * 100), communication=(traits["communication"]["score"] * 100), adaptability=(traits["adaptability"]["score"] * 100), emotional_intelligence=(traits["emotional_intelligence"]["score"] * 100), conflict_management=(traits["conflict_management"]["score"] * 100))
     else:
         return render_template('error.html')
 
@@ -135,9 +136,28 @@ def generate_collaborative_report_post():
 def collaborative_report_get(collaborative_report_id):
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
-    report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
+    report = model.retrieveCompanyReport(email, collaborative_report_id)
+    other_company_report = model.retrieveCompanyReport("sergey.brin@google.com", 0)
     if report != False:
-        return render_template('collaborative_report.html', report=report)
+        traits_a = report["traits"]
+        traits_b = other_company_report["traits"]
+        company_a = model.retrieveCompanyNameFromEmail(email),
+        company_b = model.retrieveCompanyNameFromEmail("sergey.brin@google.com")
+        return render_template('collaborative-report.html', 
+                                company_a=company_a,
+                                company_b=company_b,
+                                leadership_a=(traits_a["leadership"]["score"] * 100), 
+                                time_management_a=(traits_a["time_management"]["score"] * 100), 
+                                communication_a=(traits_a["communication"]["score"] * 100), 
+                                adaptability=(traits_a["adaptability"]["score"] * 100),
+                                emotional_intelligence=(traits_a["emotional_intelligence"]["score"] * 100), 
+                                conflict_management=(traits_a["conflict_management"]["score"] * 100),
+                                leadership_b=(traits_b["leadership"]["score"] * 100),
+                                time_management_b=(traits_b["time_management"]["score"] * 100),
+                                communication_b=(traits_b["communication"]["score"] * 100),
+                                adaptability_b=(traits_b["adaptability"]["score"] * 100),
+                                emotional_intelligence_b=(traits_b["emotional_intelligence"]["score"] * 100),
+                                conflict_management_b=(traits_b["conflict_management"]["score"] * 100))
     else:
         return render_template('error.html')
 
