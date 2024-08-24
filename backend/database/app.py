@@ -88,3 +88,6 @@ def generate_collaborative_report_post():
 def collaborative_report_get(collaborative_report_id):
     # do logic
     return render_template('collaborative_report.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
