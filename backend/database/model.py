@@ -77,6 +77,7 @@ def generateCompanyAverages(company_name):
     count = 0
     issues = {}
     all_traits = {}
+    
     for user in usrs:
         reps = user["reports"]
         if reps != []:
@@ -86,19 +87,23 @@ def generateCompanyAverages(company_name):
                 if trait not in all_traits:
                     all_traits[trait] = []
                 all_traits[trait].append(traits[trait])
+    
     company_averages = {}
+    
     for trait, scores in all_traits.items():
-        print("SCORES", scores)
+        
         if scores:
-            company_averages[trait] = np.mean(scores)
-            Q1 = np.percentile(scores, 25)
-            Q3 = np.percentile(scores, 75)
-            IQR = Q3 - Q1
-            lower_bound = Q1 - 1.5 * IQR
-            upper_bound = Q3 + 1.5 * IQR
-            
+            mean = np.mean(scores)        
+            lower_bound = mean - 0.4
+            upper_bound = mean + 0.4
             outliers = [score for score in scores if score < lower_bound or score > upper_bound]
-            issues[trait] = outliers
+        
+            company_averages[trait] = mean
+            if len(outliers)/len(scores) > 0.4:
+                issues[trait] = 'Yes'
+            else:
+                issues[trait] = 'No'
+    
     return company_averages, issues
 print(generateCompanyAverages("Apple, Inc."))
 def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url):
@@ -127,5 +132,4 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
     )   
     return True
 
-print(createNewEmployee("Yanney OU","yaedb@gmail.com","meowmeow","ABC Inc.", "yabsdjhb", "she/her"))
 print(assign_cookie("tim.cook@apple.com"))
