@@ -48,7 +48,20 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
 
     return True
 
-def createNewEmployee(employee_name, employee_email, employee_company, linkedin_url, pronouns):
-    
+def generate_company_averages(company_name):
+    usrs = users.find({"company": company_name})
+    count = 0
+    company_total = {}
+    for user in usrs:
+        reps = user["reports"]
+        if reps != []:
+            latest_report = max(reps, key=lambda reps: reps["report_id"])
+            traits = latest_report["traits"]
+            for trait in traits:
+                company_total[trait] = company_total.setdefault(trait, 0) + traits[trait]
+            count += 1
+    company_averages = {key: value / count for key, value in company_total.items()}
+    return company_averages
 
-print(createNewCompany("ABC Inc.", "ABC Admin", "admin@abc.com", "password"))
+# print(createNewCompany("BERNARDINO Inc.", "BERNADINO Admin", "BERNADINO@.com", "password"))
+print(generate_company_averages("Apple, Inc."))
