@@ -115,16 +115,42 @@ def generate_collaborative_report_post():
     generated_collaborative_report_id = model.generateCollaborativeReport()
     return redirect("/retrieve_collaborative_report/{0}".format(generated_collaborative_report_id))
 
-@app.route('/retrieve_collaborative_report/<report_id>', methods=['GET'])
+@app.route('/retrieve_collaborative_report/<collaborative_report_id>', methods=['GET'])
 def collaborative_report_get(collaborative_report_id):
-    # do logic
-    email = model.login_with_cookie
-    report = model.retrieveCompanyReportFromEmail(email, report_id)
+    print("COLLABORATIVE ID", collaborative_report_id)
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    print("email", email)
+    report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
+    print("report yeteraereare", report)
     if report != False:
         return render_template('collaborative_report.html')
     else:
         # should technically display an error
         return render_template('dashboard.html')
+
+# can change int oa post request from dashboard    
+@app.route('/retrieve_report_ids', methods=['GET'])
+def retrieve_report_ids():
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    report_ids = model.retrieveCompanyReportIdsFromEmail(email)
+    if report_ids != False:
+        #send it to template somewhere
+        print(report_ids)
+        return render_template('collaborative_report.html')
+    else:
+        # should technically display an error
+        return render_template('dashboard.html')
+    
+# can change int oa post request from dashboard    
+@app.route('/retrieve_valid_company_collaboration_report', methods=['GET'])
+def retrieve_valid_company_collaboration_report():
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    valid_companies = model.retrieveValidCompanyReports(email)
+    print(valid_companies)
+    return render_template('dashboard.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
