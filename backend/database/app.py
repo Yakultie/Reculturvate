@@ -104,19 +104,27 @@ def generate_company_report_post():
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])
 def retrieve_company_report_get(report_id):
-    # do logic
+    cookie = request.cookies.get("cookie")
+    email = model.login_with_cookie(cookie)
+    
     return render_template('company_report.html')
 
 @app.route('/generate_collaborative_report', methods=["POST"])
 def generate_collaborative_report_post():
     # do logic
-    generated_collaborative_report_id = generate_collaborative_report()
+    generated_collaborative_report_id = model.generateCollaborativeReport()
     return redirect("/retrieve_collaborative_report/{0}".format(generated_collaborative_report_id))
 
 @app.route('/retrieve_collaborative_report/<report_id>', methods=['GET'])
 def collaborative_report_get(collaborative_report_id):
     # do logic
-    return render_template('collaborative_report.html')
+    email = model.login_with_cookie
+    report = model.retrieveCompanyReportFromEmail(email, report_id)
+    if report != False:
+        return render_template('collaborative_report.html')
+    else:
+        # should technically display an error
+        return render_template('dashboard.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

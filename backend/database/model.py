@@ -115,8 +115,8 @@ def generateCompanyAverages(company_name):
                 issues[trait] = 'No'
     
     return company_averages, issues
-print(generateCompanyAverages("Apple, Inc."))
-def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url):
+
+def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url, pronouns):
     found_employee_email = users.find_one({"email": employee_email})
     found_employee_company = companies.find_one({"company_name": employee_company})
     
@@ -141,5 +141,39 @@ def createNewEmployee(employee_name, employee_email, employee_password, employee
         }
     )   
     return True
+
+def retrieveCompanyReportFromEmail(email, report_id):
+    found_user = users.find({"email": email})
+
+    if not found_user:
+        return False
+    
+    company = found_user["company"]
+
+    found_company = users.find({"company": company_name})
+    power_users = found_company["power_users"]
+    if email in power_users:
+        reports = company['internal_reports']
+        for report in reports:
+            if report["report_id"] == report_id:
+                return report
+    else:
+        return False
+    
+def retrieveCompanyReportIdsFromEmail(email):
+    found_user = users.find({"email": email})
+
+    if not found_user:
+        return False
+    
+    company = found_user["company"]
+
+    found_company = users.find({"company": company_name})
+    power_users = found_company["power_users"]
+    if email in power_users:
+        reports = company['internal_reports']
+        return reports
+    else:
+        return []
 
 print(assign_cookie("tim.cook@apple.com"))
