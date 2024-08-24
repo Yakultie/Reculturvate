@@ -1,33 +1,245 @@
 [
     {
+        "question": "How would you set a vision for the Meeps?",
+        "category": "leadership",
+        "mappings": [
+            {"answer": "Focus on preserving the Meeps' unique cultural values while gradually introducing modern financial practices that respect their traditions.", "value": 0.2},
+            {"answer": "Push for a complete overhaul of their financial system, introducing market-based valuations and modern investment strategies", "value": 0.4},
+            {"answer": "Create a hybrid model that combines the Meeps' sentimental value system with data-driven financial planning", "value": 0.6},
+            {"answer": "Let the Meeps continue their traditional ways with minimal interference", "value": 0.8}
+        ]
+    },
+    {
+        "question": "Who would you entrust with key responsibilities?",
+        "category": "leadership",
+        "mappings": [
+            {"answer": "Handle everything yourself, believing that only you can navigate the complexities of their system and ensure success.", "value": 0.2},
+            {"answer": "Delegate tasks to a carefully chosen team of Meeps, trusting them to learn and implement new strategies under your guidance.", "value": 0.4},
+            {"answer": "Establish a council of trusted Meeps to share decision-making power, blending their local expertise with your financial knowledge.", "value": 0.6},
+            {"answer": "Bring in external experts to handle specific tasks, ensuring a professional approach while you focus on strategic oversight.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "How would you approach hiring new team members to ensure they align with the Meeps' culture and goals?",
+        "category": "time_management",
+        "mappings": [
+            {"answer": "Prioritize candidates who deeply understand and respect Meep culture, even if they lack financial expertise.", "value": 0.2},
+            {"answer": "Hire highly skilled financial professionals, regardless of their familiarity with Meep culture, to bring in fresh perspectives", "value": 0.4},
+            {"answer": "Seek candidates who possess both cultural sensitivity and the necessary financial skills, ensuring a harmonious blend", "value": 0.6},
+            {"answer": "Focus on developing existing Meep talent, investing in training rather than bringing in outsiders.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "How would you respond to the growing resentment and criticism from the Meeps?",
+        "category": "communication",
+        "mappings": [
+            {"answer": "Hold a town hall meeting to listen to their concerns and openly discuss solutions, showing humility and willingness to adapt.", "value": 0.2},
+            {"answer": "Stand your ground, explaining that the tough decisions were necessary for their long-term benefit, and that the results will justify the means.", "value": 0.4},
+            {"answer": "Share the responsibility with your team, acknowledging mistakes while highlighting collective achievements and future plans.", "value": 0.6},
+            {"answer": "Avoid engaging directly with the criticism, focusing on your work and letting the results speak for themselves over time.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "How would you continue to inspire those you leave behind, and what would your final actions be?",
+        "category": "leadership",
+        "mappings": [
+            {"answer": "Train a successor among the Meeps, ensuring they are well-prepared to continue your work and lead the community.", "value": 0.2},
+            {"answer": "Develop a comprehensive financial plan and a set of guiding principles that the Meeps can follow, even after you are gone.", "value": 0.4},
+            {"answer": "Organise a farewell ceremony to celebrate the community’s progress, leaving them with words of hope for the future.", "value": 0.6},
+            {"answer": "Leave without much fanfare, trusting that the seeds you’ve planted will grow in your absence, and that the Meeps will find their way", "value": 0.8}
+        ]
+    },
+    {
+        "question": "It’s getting dangerously cold, and you need to light a fire to stay warm. The only item you have to start the fire is a letter from your dog, which holds immense sentimental value. Your shipmates insist you burn it for the sake of the group.",
+        "category": "conflict_management",
+        "mappings": [
+            {"answer": "You reluctantly light the letter, recognizing that the survival of the group must take precedence over your personal feelings.", "value": 0.2},
+            {"answer": "You refuse to burn the letter and insist on searching for other materials that could be used to start a fire", "value": 0.4},
+            {"answer": "You suggest tearing off a small piece of the letter to light the fire, preserving most of it while still addressing the group’s needs.", "value": 0.6},
+            {"answer": "You hand the letter to the group and let them decide what to do with it, distancing yourself from the emotional burden.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "After deciding too long to burn the letter, you notice that everyone seems upset and distant. They’re not openly confronting you, but their frustration is evident in their body language and tone. ",
+        "category": "emotional_intelligence",
+        "mappings": [
+            {"answer": "You bring up the issue directly, asking everyone how they feel and encouraging them to share their thoughts so the group can move forward.", "value": 0.2},
+            {"answer": "You apologise for the decision and explain your attachment to the letter, hoping they will understand your perspective.", "value": 0.4},
+            {"answer": "You quietly observe the group’s behaviour, making mental notes to adjust your actions in the future, but without addressing the issue directly.", "value": 0.6},
+            {"answer": "You choose to ignore the tension, focusing instead on the tasks at hand, believing that the group will eventually move past it.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "One of your shipmates seems particularly distressed by the situation, withdrawing from the group and showing signs of anxiety. You notice they’ve been quieter and less involved in group activities.How do you approach them?",
+        "category": "emotional_intelligence",
+        "mappings": [
+            {"answer": "A) Privately ask them how they’re feeling and offer support, showing that you care about their well-being.", "value": 0.2},
+            {"answer": "B) Gently encourage them to participate in group activities, hoping that engagement will help lift their spirits.", "value": 0.4},
+            {"answer": "C) Give them space to process their feelings, letting them know you’re there if they need to talk but not pressing the issue.", "value": 0.6},
+            {"answer": "You feel uncomfortable approaching as you worry you might say the wrong thing, so you decide to wait and see if they come to you on their own.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "You discover a large coconut, rich in nutrients and with the potential to sustain the group for days. The coconut could also be used for water storage or as a tool. However, there’s disagreement on how it should be used—some want to consume it immediately, while others see long-term benefits.",
+        "category": "conflict_management",
+        "mappings": [
+            {"answer": "Decide to consume the coconut right away, addressing the immediate hunger and thirst of the group.", "value": 0.2},
+            {"answer": "Advocate for using the coconut for storage and future needs, prioritizing long-term survival over immediate gratification.", "value": 0.4},
+            {"answer": "Propose splitting the coconut, using half for immediate consumption and reserving the other half for future use.", "value": 0.6},
+            {"answer": "Facilitate a group vote ensuring that the decision reflects the majority’s preference.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "After several days on the island, the group is feeling discouraged. Food and water are running low, and the possibility of rescue seems uncertain.How do you address the growing despair and help the team stay positive?",
+        "category": "adaptability",
+        "mappings": [
+            {"answer": "Remind the group of how far they’ve come and what they’ve achieved so far, emphasising the importance of staying strong.", "value": 0.2},
+            {"answer": "Deliver an inspiring speech, encouraging everyone to believe in the possibility of rescue, no matter how bleak things seem", "value": 0.4},
+            {"answer": "Establish a daily routine that includes moments of reflection, helping the group maintain a sense of structure", "value": 0.6},
+            {"answer": "Openly acknowledge the difficulty of the situation, but encourage the group to focus on what they can control", "value": 0.8}
+        ]
+    },
+    {
+        "question": "What strategies would you use to excel in your role as a Professional Cloud Shaper? How often would you set goals?",
+        "category": "time_management",
+        "mappings": [
+            {"answer": "Focus on daily and weekly goals to continually improve techniques and respond quickly to customer requests.", "value": 0.2},
+            {"answer": "Set long-term goals, such as expanding the business and creating innovative designs, while checking progress quarterly.", "value": 0.4},
+            {"answer": "Combine both short-term and long-term goals: daily targets for immediate tasks and annual goals for business growth.", "value": 0.6},
+            {"answer": "Avoid setting specific goals, preferring a flexible approach that adapts to daily demands.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "As your cloud designs become more popular, orders pile up, making it impossible to fulfill them within the promised 24-hour timeframe. How would you handle this situation?",
+        "category": "communication",
+        "mappings": [
+            {"answer": "Lie to customers about the status of their orders to buy more time and push through as many as possible.", "value": 0.2},
+            {"answer": "Communicate openly with customers about the delays and offer a small discount or bonus to compensate.", "value": 0.4},
+            {"answer": "Prioritise the most urgent or high-profile orders and delay the rest without notifying customers.", "value": 0.6},
+            {"answer": "Hire a temporary assistant to help manage the workload immediately, even if it affects profit margins.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "With an increasing workload, you find yourself working longer hours. How do you manage your time to maintain a balance between work and rest?",
+        "category": "time_management",
+        "mappings": [
+            {"answer": "Work overtime whenever necessary to fulfil all orders, reacting to the workload as it comes without a fixed schedule.", "value": 0.2},
+            {"answer": "Establish strict working hours and stick to them, even if it means some orders might be delayed.", "value": 0.4},
+            {"answer": "Tackle orders based on urgency each day, often working late into the night if needed, to meet the most immediate demands.", "value": 0.6},
+            {"answer": "Use time management tools and strategies to streamline your daily tasks, aiming to complete all work within set hours.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "How do you gain the trust of your new employee in this demanding and creative environment?",
+        "category": "emotional_intelligence",
+        "mappings": [
+            {"answer": "Provide clear instructions and regular feedback, ensuring they understand their role.", "value": 0.2},
+            {"answer": "Offer them a financial incentive to motivate their performance and show that their efforts are directly linked to the business's success.", "value": 0.4},
+            {"answer": "Allow them to work independently without much guidance, trusting them to learn from experience.", "value": 0.6},
+            {"answer": "Create a welcoming environment by spending time getting to know them personally and encouraging open communication.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "How do you handle the stress and keep the business running after your essential tool breaks?",
+        "category": "emotional_intelligence",
+        "mappings": [
+            {"answer": "Take a short break to calm down and reassess the situation, then think creatively about a quick fix.", "value": 0.2},
+            {"answer": "React quickly to repair the tool immediately, even if it means spending extra money or resources.", "value": 0.4},
+            {"answer": "Delegate the ongoing projects to another team member while you focus on repairing the tool and communicating with clients about potential delays.", "value": 0.6},
+            {"answer": "Use this setback as an opportunity to rethink your business strategy such as investing in backup tools to prevent future disruptions.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "The customs and social norms are unfamiliar to you, but you don't feel threatened. How do you approach blending in and adapting to this new environment?",
+        "category": "conflict_management",
+        "mappings": [
+            {"answer": "Approach the situation with curiosity and a willingness to learn, engaging with various alien cultures and customs to understand their ways.", "value": 0.2},
+            {"answer": "Spend time observing the interactions and behaviours of those around you to gradually adapt to the new environment.", "value": 0.4},
+            {"answer": "Rely on your own habits and comfort zone, making minimal adjustments while hoping others will adapt to you.", "value": 0.6},
+            {"answer": "Keep to yourself and avoid engaging with others to minimise the risk of misunderstanding and cultural faux pas.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "You’re trying to communicate with a local who doesn’t speak your language. How do you attempt to get your message across?",
+        "category": "adaptability",
+        "mappings": [
+            {"answer": "Employ drawings, gestures, or objects to help convey your message clearly despite the language barrier.", "value": 0.2},
+            {"answer": "Use simple words and phrases, speaking slowly and clearly in the hope that basic language can be understood.", "value": 0.4},
+            {"answer": "Rely on universal gestures and body language, hoping that these will be understood regardless of language differences.", "value": 0.6},
+            {"answer": "Find someone who can translate or mediate the conversation.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "You realise that flailing your arms is not effective in gaining attention or communicating with the locals. How do you adjust your strategy?",
+        "category": "communication",
+        "mappings": [
+            {"answer": "Take a step back to logically assess the situation, considering more effective methods based on observation and feedback.", "value": 0.2},
+            {"answer": "Continue using your current approach, relying on intuition and hoping that persistence will eventually yield results.", "value": 0.4},
+            {"answer": "Try various methods randomly, hoping that one of them will work without a specific strategy or plan.", "value": 0.6},
+            {"answer": "Ask for advice from the locals on the best way to communicate or gain their attention, leveraging their expertise.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "Flailing your arms, you accidentally knock over a vendor’s stall, causing some valuable items to fall and break. The vendor, a large alien creature with multiple arms and an intimidating presence, seems upset and starts speaking in a language you don’t understand.",
+        "category": "leadership",
+        "mappings": [
+            {"answer": "Show remorse through gestures and facial expressions, and attempt to communicate your willingness to make amends.", "value": 0.2},
+            {"answer": "Immediately offer something of value to compensate for the damages.", "value": 0.4},
+            {"answer": "Look for someone nearby who understands both your language and the vendor's language to help mediate the situation and explain your mistake and willingness to resolve it.", "value": 0.6},
+            {"answer": "Quickly walk away or blend into the crowd, hoping the vendor doesn’t pursue you or escalate the situation further.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "2. Patience and Conflict Resolution: While navigating the bazaar, someone becomes aggressive and threatens you. They appear weaker than you, but you need to decide how to handle the situation. What is your approach?",
+        "category": "communication",
+        "mappings": [
+            {"answer": "Remain calm and patient, using de-escalation techniques to address the aggression peacefully and avoid further conflict.", "value": 0.2},
+            {"answer": "Decide to confront the aggressor physically, using your advantage to assert dominance and protect yourself.", "value": 0.4},
+            {"answer": "Look for a neutral party or mediator to help resolve the conflict and diffuse the situation diplomatically.", "value": 0.6},
+            {"answer": "Walk away from the situation and avoid any confrontation, hoping that the aggressor loses interest and moves on.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "Planning: As the launch date for “The Budget-Bending Wallet” approaches, you look at your calendar. What do you see?",
+        "category": "time_management",
+        "mappings": [
+            {"answer": "You have an empty calendar, trusting that your intuition and on-the-fly decisions will guide you through the preparations.", "value": 0.2},
+            {"answer": "Each hour is meticulously scheduled with tasks, meetings, and milestones, ensuring everything is organized and accounted for.", "value": 0.4},
+            {"answer": "Your calendar shows a few scattered appointments, indicating that much of the planning is still pending and will require a last-minute rush.", "value": 0.6},
+            {"answer": "Your calendar is filled with flexible time slots, allowing you to adapt to changes and unforeseen issues as they arise.", "value": 0.8}
+        ]
+    },
+    {
+        "question": "Procrastination: You’ve been putting off finalising key details for the launch of “The Budget-Bending Wallet.” How do you handle the situation?",
+        "category": "time_management",
+        "mappings": [
+            {"answer": "Decide to tackle all the pending tasks immediately, focusing on catching up and completing everything before the deadline.", "value": 0.2},
+            {"answer": "Identify and address the most critical tasks first, leaving less urgent tasks to be completed later.", "value": 0.4},
+            {"answer": "Assign tasks to your team members, trusting them to handle the remaining preparations and manage deadlines.", "value": 0.6},
+            {"answer": "Continue to delay addressing the tasks, hoping that everything will fall into place as the launch date approaches.", "value": 0.8}
+        ]
+    },
+    {
         "question": "Question 1?",
         "category": "communication",
         "mappings": [
-            {"answer": "answer a", "value": 0.2},
-            {"answer": "answer b", "value": 0.4},
-            {"answer": "answer c", "value": 0.6},
-            {"answer": "answer d", "value": 0.8}
+            {"answer": "React angrily and cause a scene at their office to try to force a reconsideration from the investor.", "value": 0.2},
+            {"answer": "Accept the loss of the investor and focus on managing the remaining resources and preparing for the launch with what you have.", "value": 0.4},
+            {"answer": "Present a strong case to the investor, highlighting the potential and benefits of the product in an attempt to persuade them to stay on board.", "value": 0.6},
+            {"answer": "Quickly start seeking other investors or funding sources to make up for the lost investment.", "value": 0.8}
         ]
     },
     {
-        "question": "Question 2?",
+        "question": "While reviewing the budget, you find that a significant amount of money is missing and discover that your best worker, who has used the funds for their child's hospital expenses, is responsible.",
         "category": "leadership",
         "mappings": [
-            {"answer": "answer a", "value": 0.2},
-            {"answer": "answer b", "value": 0.4},
-            {"answer": "answer c", "value": 0.6},
-            {"answer": "answer d", "value": 0.8}
-        ]
-    },
-    {
-        "question": "Question 3?",
-        "category": "time_management",
-        "mappings": [
-            {"answer": "answer a", "value": 0.2},
-            {"answer": "answer b", "value": 0.4},
-            {"answer": "answer c", "value": 0.6},
-            {"answer": "answer d", "value": 0.8}
+            {"answer": "Report the situation to the authorities, focusing on accountability and maintaining financial integrity.", "value": 0.2},
+            {"answer": "Choose to overlook the situation due to your friend’s personal crisis, hoping that the matter will resolve itself.", "value": 0.4},
+            {"answer": "Confront your friend about their actions and issue a warning, making it clear that such behaviour is unacceptable while offering support for their personal situation.", "value": 0.6},
+            {"answer": "Work out a repayment plan with your friend and address the issue privately.", "value": 0.8}
         ]
     }
+ 
+
 ]
 
