@@ -49,15 +49,37 @@ def employee_signup_post():
 
 @app.route('/login', methods=['GET'])
 def login_get():
+    cookie = request.cookies.get("cookie")
+
+    if cookie:
+        email_returned = model.login_with_cookie(cookie)
+        if email_returned:
+            return render_template('dashboard.html', email=email_returned)
+
     return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
 def login_post():
     email = request.form['email']
     password = request.form['password']
-    # do logic
-    return render_template('dashboard.html')
 
+    email_returned = model.login(email, password)
+    if email_returned:
+        cookie = model.assign_cookie(email)
+        resp = make_response(render_template('dashboard.html', email=email))
+        resp.set_cookie("cookie", cookie)
+        return resp
+    else:
+        resp = make_response(render_template('login.html', msg="Unable to login. Please try again!"))
+        resp.delete_cookie("cookie")
+        return resp
+    
+@app.route('/logout', methods=['GET'])
+def logout_get():
+    resp = make_response(redirect('/login'))
+    resp.delete_cookie("cookie")
+    return resp
+    
 @app.route('/answer_question', methods=['POST'])
 def answer_question_post():
     # do logic

@@ -13,18 +13,25 @@
             <div class="columns is-centered">
                 <div class="column is-4">
                     <h1 class="title has-text-centered">Login</h1>
-                    <form action="#" method="POST">
+                    {% if msg %}
+                    <article class="message is-warning">
+                        <div class="message-body">
+                            {{ msg }}
+                        </div>
+                      </article>
+                    {% endif %}
+                    <form action="/login" method="POST">
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Enter your email" required>
+                                <input name="email" class="input" type="text" placeholder="Enter your email" required>
                             </div>
                         </div>
 
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" type="password" placeholder="Enter your password" required>
+                                <input name="password" class="input" type="password" placeholder="Enter your password" required>
                             </div>
                         </div>
 

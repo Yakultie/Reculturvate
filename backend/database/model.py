@@ -32,6 +32,14 @@ def login_with_cookie(cookie):
 
     return found_user["email"]
 
+def login(email, password):
+    found_user = users.find_one({"email": email})
+    if not found_user:
+        return None
+    
+    if found_user["password"] == password:
+        return email
+
 def createNewCompany(company_name, admin_full_name, admin_email, password):
     found_company = companies.find_one({"company_name": company_name})
     found_user = users.find_one({"email": admin_email})
