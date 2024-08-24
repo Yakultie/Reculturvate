@@ -69,7 +69,7 @@ def retrieve_individual_report_get(report_id):
 def generate_company_report_post():
     # do logic
     generated_company_report_id = generate_company_report()
-    # report_averages = generateCompanyAverages(company_name)
+    # report_averages, issues = generateCompanyAverages(company_name)
     return redirect("/retrieve_company_report/{0}".format(generated_company_report_id))
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])

@@ -1,6 +1,7 @@
 import os
 import pymongo
 from datetime import datetime
+import numpy as np
 
 mongo_client = pymongo.MongoClient(os.environ["MONGODB_CONNECTION_STRING"])
 mongo_db = mongo_client["brij"]
@@ -51,18 +52,32 @@ def createNewCompany(company_name, admin_full_name, admin_email, password):
 def generateCompanyAverages(company_name):
     usrs = users.find({"company": company_name})
     count = 0
-    company_total = {}
+    issues = {}
+    all_traits = {}
     for user in usrs:
         reps = user["reports"]
         if reps != []:
             latest_report = max(reps, key=lambda reps: reps["report_id"])
             traits = latest_report["traits"]
             for trait in traits:
-                company_total[trait] = company_total.setdefault(trait, 0) + traits[trait]
-            count += 1
-    company_averages = {key: value / count for key, value in company_total.items()}
-    return company_averages
-
+                if trait not in all_traits:
+                    all_traits[trait] = []
+                all_traits[trait].append(traits[trait])
+    company_averages = {}
+    for trait, scores in all_traits.items():
+        print("SCORES", scores)
+        if scores:
+            company_averages[trait] = np.mean(scores)
+            Q1 = np.percentile(scores, 25)
+            Q3 = np.percentile(scores, 75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 1.5 * IQR
+            upper_bound = Q3 + 1.5 * IQR
+            
+            outliers = [score for score in scores if score < lower_bound or score > upper_bound]
+            issues[trait] = outliers
+    return company_averages, issues
+print(generateCompanyAverages("Apple, Inc."))
 def createNewEmployee(employee_name, employee_email, employee_password, employee_company, linkedin_url):
     found_employee_email = users.find_one({"email": employee_email})
     found_employee_company = companies.find_one({"company_name": employee_company})
