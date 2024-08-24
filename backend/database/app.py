@@ -107,7 +107,6 @@ def generate_company_report_post():
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
     report_averages, issues, report_id = model.generateCompanyAverages(email)
-    print(report_averages, issues, report_id)
     return redirect("/retrieve_company_report/{0}".format(report_id))
 
 @app.route('/retrieve_company_report/<report_id>', methods=['GET'])
@@ -116,8 +115,7 @@ def retrieve_company_report_get(report_id):
     email = model.login_with_cookie(cookie)
     report = model.retrieveCompanyReport(email, report_id)
     if report != False:
-        print(report)
-        return render_template('report.html')
+        return render_template('report.html', report=report)
     else:
         return render_template('error.html')
 
@@ -133,7 +131,7 @@ def collaborative_report_get(collaborative_report_id):
     email = model.login_with_cookie(cookie)
     report = model.retrieveCompanyReportFromEmail(email, collaborative_report_id)
     if report != False:
-        return render_template('collaborative_report.html')
+        return render_template('collaborative_report.html', report=report)
     else:
         return render_template('error.html')
 
@@ -145,20 +143,18 @@ def retrieve_report_ids():
     report_ids = model.retrieveCompanyReportIdsFromEmail(email)
     if report_ids != False:
         #send it to template somewhere
-        print(report_ids)
-        return render_template('collaborative_report.html')
+        # print(report_ids)
+        return render_template('collaborative_report.html', report_ids=report_ids)
     else:
-        # should technically display an error
-        return render_template('dashboard.html')
-    
-# can change int oa post request from dashboard    
+        return render_template('error.html')
+       
 @app.route('/retrieve_valid_company_collaboration_report', methods=['GET'])
 def retrieve_valid_company_collaboration_report():
     cookie = request.cookies.get("cookie")
     email = model.login_with_cookie(cookie)
     valid_companies = model.retrieveValidCompanyReports(email)
-    print(valid_companies)
-    return render_template('dashboard.html')
+    # print(valid_companies)
+    return render_template('dashboard.html', valid_companies=valid_companies)
 
 if __name__ == "__main__":
     app.run(debug=True)
