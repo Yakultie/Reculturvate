@@ -290,9 +290,9 @@ body {
 }
 
 .profile-picture {
-    width: auto; /* Maintain original aspect ratio */
-    max-width: 200px; /* Limit the width of the image */
-    height: auto; /* Maintain original aspect ratio */
+    width: 100px; /* Maintain original aspect ratio */
+    max-width: 100px; /* Limit the width of the image */
+    height: 100px; /* Maintain original aspect ratio */
     margin-bottom: 20px; /* Space below the image */
 }
 
