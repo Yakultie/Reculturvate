@@ -212,6 +212,28 @@ def retrieveCompanyReportFromEmail(email, report_id):
     else:
         return False
     
+def is_superuser(email):
+    # Find the user based on email
+    found_user = users.find_one({"email": email})
+    
+    if not found_user:
+        return False  # User does not exist
+    
+    company_name = found_user.get("company")
+    found_company = companies.find_one({"company_name": company_name})
+    
+    if not found_company:
+        return False  # Company does not exist
+    
+    # Retrieve the list of power users from the company document
+    power_users = found_company.get("power_users", [])
+    
+    # Check if the user is in the list of power users
+    for entry in power_users:
+        if entry.get('email') == email:
+            return True
+    return False
+
 def retrieveValidCompanyReports(email):
     companies_with_reports = companies.find({
         "internal_reports": {"$exists": True, "$ne": []},

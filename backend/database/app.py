@@ -72,6 +72,8 @@ def login_post():
         cookie = model.assign_cookie(email)
         resp = make_response(render_template('dashboard.html', email=email))
         resp.set_cookie("cookie", cookie)
+        if not is_superuser(email):
+            return redirect("/answer_question")
         return resp
     else:
         resp = make_response(render_template('login.html', msg="Unable to login. Please try again!"))
