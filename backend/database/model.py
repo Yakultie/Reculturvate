@@ -3,9 +3,9 @@ import random
 import pymongo
 import string
 from datetime import datetime
-from langchain_openai import ChatOpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+# from langchain_openai import ChatOpenAI
+# from langchain.prompts import PromptTemplate
+# from langchain.chains import LLMChain
 import numpy as np
 
 mongo_client = pymongo.MongoClient(os.environ["MONGODB_CONNECTION_STRING"])
@@ -336,7 +336,7 @@ def generateIndividualReport(email):
     
     traits = {}
     for category in num_cat.keys():
-        traits[category] = cat_val.get(category, 0)  # Default to 0 if category is not found
+        traits[category] = cat_val.get(category, 0)/num_cat[category]  # Default to 0 if category is not found
 
     report = {
         "report_id": new_id,

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="columns">
     <div class="column is-half">
-        <section class="intro-section">
+        <section class="intro-section"> 
             <div class="intro-container">
                 <h1 class="intro-heading">You are a Pulsar</h1>
-                <img src="pulsar.png" alt="picture" class="profile-picture">
+                <img src="{{ url_for('static', filename='pulsar.png ') }}" alt="picture" class="profile-picture">
                 <p class="intro-description">"You're like a pulsar when it comes to time management—precise, consistent, and always on schedule. Just as a pulsar emits regular bursts of energy at predictable intervals, you keep your tasks and responsibilities in perfect rhythm, ensuring nothing is ever missed or delayed. Your ability to manage time efficiently is as reliable as the cosmic clockwork of a pulsar."</p>
             </div>
         </section>
