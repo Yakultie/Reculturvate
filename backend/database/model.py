@@ -262,5 +262,3 @@ def writeIndividualReportDescription(email, report_id):
 
     users.update_one({"email": email}, {"$set": {"reports": reports}})
     return True
-
-writeIndividualReportDescription("john.appleseed@apple.com", 0)
