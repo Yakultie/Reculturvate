@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> --> 
+    <link rel="stylesheet" href = "style.css">
 </head>
 <body>
     <section class="scale-section">
@@ -14,7 +15,7 @@
             <div class="scale-group">
                 <div class="scale-label">Leadership</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 50%;"></div>
+                    <div class="line" style="--line-position: {{ leadership }}%;"></div>
                 </div>
                 <div class="scale-labels">
                     <span class="label-left">0</span>
@@ -25,37 +26,37 @@
             <div class="scale-group">
                 <div class="scale-label">Time Management</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 25%;"></div>
+                    <div class="line" style="--line-position: {{ time_management }}%;"></div>
                 </div>
                 <div class="scale-labels">
-                    <span class="label-left">0</span>
-                    <span class="label-right">100</span>
+                    <span class="label-left">Reactive</span>
+                    <span class="label-right">Proactive</span>
                 </div>
             </div>
             <div class="scale-group">
                 <div class="scale-label">Communication</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 75%;"></div>
+                    <div class="line" style="--line-position: {{ communication }}%;"></div>
                 </div>
                 <div class="scale-labels">
-                    <span class="label-left">Passive</span>
-                    <span class="label-right">Active</span>
+                    <span class="label-left">Closed</span>
+                    <span class="label-right">Open</span>
                 </div>
             </div>
             <div class="scale-group">
                 <div class="scale-label">Adaptability</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 75%;"></div>
+                    <div class="line" style="--line-position: {{ adaptability }}%;"></div>
                 </div>
                 <div class="scale-labels">
-                    <span class="label-left">0</span>
-                    <span class="label-right">100</span>
+                    <span class="label-left">Rigid</span>
+                    <span class="label-right">Flexible</span>
                 </div>
             </div>
             <div class="scale-group">
                 <div class="scale-label">EI</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 75%;"></div>
+                    <div class="line" style="--line-position: {{ emotional_intelligence }}%;"></div>
                 </div>
                 <div class="scale-labels">
                     <span class="label-left">Low</span>
@@ -65,18 +66,20 @@
             <div class="scale-group">
                 <div class="scale-label">Conflict Management</div>
                 <div class="scale">
-                    <div class="line" style="--line-position: 75%;"></div>
+                    <div class="line" style="--line-position: {{ conflict_management }}%;"></div>
                 </div>
                 <div class="scale-labels">
-                    <span class="label-left">0</span>
-                    <span class="label-right">100</span>
+                    <span class="label-left">Basic</span>
+                    <span class="label-right">Expert</span>
                 </div>
             </div>
-            <!-- Add more scales as needed -->
         </div>
     </section>
-    <section>
-        
+    <section class="action-plan">
+        <div class="action-plan-container">
+            
+            <p class="placeholder-text">Your action plan will be displayed here...</p>
+        </div>
     </section>
 </body>
 </html>

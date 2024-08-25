@@ -256,6 +256,16 @@ body {
     font-size: 1rem;
 }
 
+.line {
+    position: absolute;
+    left: var(--line-position, 50%); /* Use the CSS variable for positioning */
+    width: 5px; /* Width of the vertical line */
+    height: 100%; /* Full height of the scale */
+    background: #f00; /* Line color */
+    top: 0; /* Align the line to the top of the scale */
+    transform: translateX(-50%); /* Center the line horizontally */
+}
+
 .action-plan {
     width: 100%;
     display: flex;
@@ -278,15 +288,19 @@ body {
 }
 
 
+/* Ensure the intro section is positioned at the top */
 .intro-section {
     text-align: center;
     margin-bottom: 30px; /* Space below the introduction section */
+    padding: 20px; /* Add padding for some space around the content */
+    justify-content: center;
 }
 
 .intro-container {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the content */
+    justify-content: center;
 }
 
 .profile-picture {
@@ -299,4 +313,14 @@ body {
 .intro-heading {
     font-size: 2rem; /* Size of the heading text */
     color: #fff; /* Text color */
+}
+
+/* Adjust the scale section to start below the intro section */
+.scale-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; /* Add padding to avoid content touching edges */
+    margin-top: 30px; /* Space above the scale section to separate from intro section */
 }
