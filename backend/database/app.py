@@ -106,7 +106,8 @@ def retrieve_individual_report_get(report_id):
     email = model.login_with_cookie(cookie)
     report = model.getIndividualReport(email, report_id)
     traits = report["traits"]
-    return render_template('individual-report.html', leadership=(traits["leadership"] * 100), time_management=(traits["time_management"] * 100), communication=(traits["communication"] * 100), adaptability=(traits["adaptability"] * 100), emotional_intelligence=(traits["emotional_intelligence"] * 100), conflict_management=(traits["conflict_management"] * 100))
+    description = report["description"]
+    return render_template('individual-report.html', description=description, leadership=(traits["leadership"] * 100), time_management=(traits["time_management"] * 100), communication=(traits["communication"] * 100), adaptability=(traits["adaptability"] * 100), emotional_intelligence=(traits["emotional_intelligence"] * 100), conflict_management=(traits["conflict_management"] * 100))
 
 @app.route('/generate_company_report', methods=["POST"])
 def generate_company_report_post():
