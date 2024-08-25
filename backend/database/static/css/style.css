@@ -256,16 +256,6 @@ body {
     font-size: 1rem;
 }
 
-.line {
-    position: absolute;
-    left: var(--line-position, 50%); /* Use the CSS variable for positioning */
-    width: 5px; /* Width of the vertical line */
-    height: 100%; /* Full height of the scale */
-    background: #f00; /* Line color */
-    top: 0; /* Align the line to the top of the scale */
-    transform: translateX(-50%); /* Center the line horizontally */
-}
-
 .action-plan {
     width: 100%;
     display: flex;
@@ -285,4 +275,28 @@ body {
     color: #555;
     font-size: 16px;
     text-align: center;
+}
+
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 30px; /* Space below the introduction section */
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+}
+
+.profile-picture {
+    width: auto; /* Maintain original aspect ratio */
+    max-width: 200px; /* Limit the width of the image */
+    height: auto; /* Maintain original aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.intro-heading {
+    font-size: 2rem; /* Size of the heading text */
+    color: #fff; /* Text color */
 }

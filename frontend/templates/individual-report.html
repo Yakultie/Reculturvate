@@ -5,80 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="scale-section">
-        <div class="scales-container">
-            <!-- Scale Group -->
-            <div class="scale-group">
-                <div class="scale-label">Leadership</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ leadership }}%;"></div>
-                </div>
-                <div class="scale-labels">
-                    <span class="label-left">0</span>
-                    <span class="label-right">100</span>
-                </div>
+    <div class="columns">
+    <div class="column is-half">
+        <section class="intro-section">
+            <div class="intro-container">
+                <h1 class="intro-heading">You are a Pulsar</h1>
+                <img src="pulsar.png" alt="picture" class="profile-picture">
+                <p class="intro-description">"You're like a pulsar when it comes to time management—precise, consistent, and always on schedule. Just as a pulsar emits regular bursts of energy at predictable intervals, you keep your tasks and responsibilities in perfect rhythm, ensuring nothing is ever missed or delayed. Your ability to manage time efficiently is as reliable as the cosmic clockwork of a pulsar."</p>
             </div>
-            <!-- Repeat the scale-group div as needed -->
-            <div class="scale-group">
-                <div class="scale-label">Time Management</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ time_management }}%;"></div>
+        </section>
+    </div>
+    <div class="column">
+        <section class="scale-section">
+            <div class="scales-container">
+                <!-- Scale Group -->
+                <div class="scale-group">
+                    <div class="scale-label">Leadership</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ leadership }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">0</span>
+                        <span class="label-right">100</span>
+                    </div>
                 </div>
-                <div class="scale-labels">
-                    <span class="label-left">Reactive</span>
-                    <span class="label-right">Proactive</span>
+                <!-- Repeat the scale-group div as needed -->
+                <div class="scale-group">
+                    <div class="scale-label">Time Management</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ time_management }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">Reactive</span>
+                        <span class="label-right">Proactive</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scale-group">
-                <div class="scale-label">Communication</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ communication }}%;"></div>
+                <div class="scale-group">
+                    <div class="scale-label">Communication</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ communication }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">Closed</span>
+                        <span class="label-right">Open</span>
+                    </div>
                 </div>
-                <div class="scale-labels">
-                    <span class="label-left">Closed</span>
-                    <span class="label-right">Open</span>
+                <div class="scale-group">
+                    <div class="scale-label">Adaptability</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ adaptability }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">Rigid</span>
+                        <span class="label-right">Flexible</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scale-group">
-                <div class="scale-label">Adaptability</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ adaptability }}%;"></div>
+                <div class="scale-group">
+                    <div class="scale-label">EI</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ emotional_intelligence }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">Low</span>
+                        <span class="label-right">High</span>
+                    </div>
                 </div>
-                <div class="scale-labels">
-                    <span class="label-left">Rigid</span>
-                    <span class="label-right">Flexible</span>
+                <div class="scale-group">
+                    <div class="scale-label">Conflict Management</div>
+                    <div class="scale">
+                        <div class="line" style="--line-position: {{ conflict_management }}%;"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span class="label-left">0</span>
+                        <span class="label-right">100</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scale-group">
-                <div class="scale-label">EI</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ emotional_intelligence }}%;"></div>
-                </div>
-                <div class="scale-labels">
-                    <span class="label-left">Low</span>
-                    <span class="label-right">High</span>
-                </div>
-            </div>
-            <div class="scale-group">
-                <div class="scale-label">Conflict Management</div>
-                <div class="scale">
-                    <div class="line" style="--line-position: {{ conflict_management }}%;"></div>
-                </div>
-                <div class="scale-labels">
-                    <span class="label-left">0</span>
-                    <span class="label-right">100</span>
-                </div>
-            </div>
-            <!-- Add more scales as needed -->
-        </div>
-    </section>
-    <section class="action-plan">
-        <div class="action-plan-container">
-            <p class="placeholder-text">{{ description }}</p>
-        </div>
-    </section>
+        </section>
+    </div>
+
 </body>
 </html>
