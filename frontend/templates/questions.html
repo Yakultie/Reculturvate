@@ -14,38 +14,21 @@
                 <p class="question-text">{{ question }}</p>
                 <div class="options">
                     {% for answer_option in answer_options %}
-                    <div class="option" onclick="window.location='/answer_question/{{ question_id }}/{{ answer_option }}'">{{ answer_option }}</div>
+                    <div class="option" onclick="submitAnswer('{{ question_id }}', '{{ loop.index }}', '{{ answer_option }}')">
+                        {{ loop.index }}. {{ answer_option }}
+                    </div>
                     {% endfor %}
                 </div>
             </div>
             
-            <!--
-            <div class="question hidden" id="question2">
-                <p class="question-text">What is your preferred development environment?</p>
-                <div class="options">
-                    <div class="option" onclick="selectOption('VSCode', 'question3')">VSCode</div>
-                    <div class="option" onclick="selectOption('Sublime Text', 'question3')">Sublime Text</div>
-                    <div class="option" onclick="selectOption('IntelliJ IDEA', 'question3')">IntelliJ IDEA</div>
-                    <div class="option" onclick="selectOption('Eclipse', 'question3')">Eclipse</div>
-                </div>
-            </div>
-
-            <div class="question hidden" id="question3">
-                <p class="question-text">Which type of projects do you prefer?</p>
-                <div class="options">
-                    <div class="option" onclick="selectOption('Web Development', 'submit')">Web Development</div>
-                    <div class="option" onclick="selectOption('Data Science', 'submit')">Data Science</div>
-                    <div class="option" onclick="selectOption('Mobile Apps', 'submit')">Mobile Apps</div>
-                    <div class="option" onclick="selectOption('Game Development', 'submit')">Game Development</div>
-                </div>
-            </div>
-
-            <div class="question hidden" id="submit">
-                <p class="question-text">Thank you for completing the questionnaire!</p>
-            </div>
-            -->
+            <!-- Other questions and submit section -->
         </div>
     </section>
-    <script src="script.js"></script>
+    <script>
+        function submitAnswer(questionId, answerIndex) {
+            // Redirect to the URL with the selected answer and its enumerated index
+            window.location.href = `/answer_question/${questionId}/${answerIndex}`;
+        }
+    </script>
 </body>
 </html>

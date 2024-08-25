@@ -228,6 +228,80 @@ def retrieveCompanyReport(email, report_id):
 
 def getQuestion(n):
     found_question = question_bank.find_one({"question_id": n})
+    if not found_question:
+        return None, None
+
     question = found_question["question"]
     answer_options = [x["answer"] for x in found_question["mappings"]]
     return question, answer_options
+    
+def getCategory(question_number):
+    question = question_bank.find_one({"question_id": int(question_number)})
+    if question:
+        return question, question["category"]
+    return None  
+
+def updateValue(email, category, value):
+    user = users.find_one({"email": email})
+    if not user:
+        return False
+    num_cat = user.get('num_cat', {})
+    cat_val = user.get('cat_val', {})
+
+    if category not in num_cat:
+        num_cat[category] = 1
+    else:
+        num_cat[category] += 1
+    if category not in cat_val:
+        cat_val[category] = value
+    else:
+        cat_val[category] += value 
+    result = users.update_one(
+        {"email": email},
+        {"$set": {"num_cat": num_cat, "cat_val": cat_val}}
+    )
+    return None
+def resetValue(email):
+    num_cat = {}
+    cat_val = {}
+    result = users.update_one(
+        {"email": email},
+        {"$set": {"num_cat": num_cat, "cat_val": cat_val}}
+    )
+    return None
+
+def generateIndividualReport(email):
+    user = users.find_one({"email": email})
+    
+    if not user:
+        raise ValueError("User not found")
+    
+    num_cat = user.get("num_cat", {})
+    cat_val = user.get("cat_val", {})
+    
+    if 'reports' in user and len(user['reports']) > 0:
+        # Find the report with the highest report_id
+        latest_report = max(user['reports'], key=lambda report: report['report_id'])
+        latest_report_id = latest_report['report_id']
+        new_id = latest_report_id + 1
+    else:
+        new_id = 0
+    
+    traits = {}
+    for category in num_cat.keys():
+        traits[category] = cat_val.get(category, 0)  # Default to 0 if category is not found
+
+    report = {
+        "report_id": new_id,
+        "traits": traits,
+        "description": "Generated report description",  # Customize as needed
+        "personality_type": "rock"  # Customize as needed
+    }
+    
+    # Save the new report to the user's reports
+    users.update_one(
+        {"email": email},
+        {"$push": {"reports": report}}
+    )
+    
+    return new_id

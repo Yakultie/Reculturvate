@@ -193,7 +193,7 @@
         "question": "You find yourself unexpectedly transported to a peculiar social setting—a bustling intergalactic bazaar floating in space, where beings from countless planets and dimensions gather to trade, socialize, and celebrate. The bazaar is filled with vibrant colors, exotic smells, and an array of alien cultures and customs. You’re the only human in sight, and everyone around you speaks a mix of unfamiliar languages and uses unusual gestures. With no clear understanding of the bazaar's social norms, you need to navigate this enigmatic environment while trying to make connections and understand the bazaar's unique social dynamics. Your goal is to blend in, learn the local customs, and perhaps even find a way back to your own world.",
         "category": "section",
         "mappings": [
-            {"answeer": "Continue", "value": 0.0}
+            {"answer": "Continue", "value": 0.0}
         ]
     },
     {
@@ -256,7 +256,7 @@
         "question": "You've just been appointed as the Lead Strategist for the launch of a highly unconventional financial product: 'The Budget-Bending Wallet.' This wallet promises to not only keep track of your expenses but also dynamically adjust your budget in real-time based on your spending habits and financial goals. Equipped with AI, it uses a mix of predictive algorithms and personalised insights to suggest spending limits, savings strategies, and even offers tailored investment opportunities. The wallet also features a built-in holographic display that shows a 3D projection of your financial health, offering real-time updates and visualisations. Your task is to design a captivating marketing campaign, organise a launch event, and address any concerns about privacy and security regarding the wallet’s data collection and AI capabilities.",
         "category": "section",
         "mappings": [
-            {"answeer": "Continue", "value": 0.0}
+            {"answer": "Continue", "value": 0.0}
         ]
     },
     {
